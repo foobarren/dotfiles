@@ -15,7 +15,14 @@ My various dotfiles (tested to work on OS X).
 	$ cd dotfiles && make install
 	```
 
-3. Install Vim bundles:
+3. Setup [Vundle](http://github.com/gmarik/vundle)
+
+     ```
+     $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+     ```
+
+
+4. Install Vim bundles:
 
 	Launch vim, run :BundleInstall
 
