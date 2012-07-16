@@ -51,10 +51,8 @@ set shiftwidth=4			" Set the default shift width for indents
 set smarttab				" Smarter tab levels
 
 " indent setting
-set ai
 set si
 set formatoptions+=mM
-set autoindent
 set smartindent
 set cindent
 set cinoptions=:s,ps,ts,cs
