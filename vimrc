@@ -49,6 +49,7 @@ set tabstop=4				" Set the default tabstop
 set softtabstop=4
 set shiftwidth=4			" Set the default shift width for indents
 set smarttab				" Smarter tab levels
+set expandtab
 
 " indent setting
 set si
@@ -59,6 +60,7 @@ set cinoptions=:s,ps,ts,cs
 set cinwords=if,else,while,do,for,switch,case
 
 syntax on
+set foldmethod=syntax		" http://www.douban.com/group/topic/28307548/ 
 filetype plugin indent on	" Automatically detect file types
 " }}}
 
