@@ -36,12 +36,25 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/usr/local/sbin
 
-# ssh
+# Shortcuts
 alias kdx="ssh kdx"
 alias ld="ssh ld"
 
-alias runmysql="/usr/local/Cellar/mysql/5.5.25/bin/mysqld"
-alias psgrep="ps aux | grep -v grep | grep"
+alias psp="ps aux | grep -v grep | grep"
 alias l="ls -alh"
 alias g="git"
 alias v="vim"
+alias p="cd ~/project"
+alias h="history"
+alias o="open"
+alias oo="open ."
+
+# Get OS X Software Updates, update Homebrew itself, and upgrade installed Homebrew packages
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias iip="ipconfig getifaddr en1"
+alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+
+
