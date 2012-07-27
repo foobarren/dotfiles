@@ -32,6 +32,19 @@ Bundle 'jistr/vim-nerdtree-tabs'
 map <S-m> <plug>NERDTreeTabsToggle<CR>
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'mattn/zencoding-vim'
+Bundle 'Shougo/neocomplcache'
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_auto_select = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underbar completion.
+let g:neocomplcache_enable_underbar_completion = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+Bundle 'mattn/zencoding-vim'
 " }}}
 
 " Formatting {{{
@@ -45,9 +58,9 @@ set wildmode=longest,list	" At command line, complete longest common string, the
 
 set backspace=indent,eol,start
 
-set tabstop=4				" Set the default tabstop
-set softtabstop=4
-set shiftwidth=4			" Set the default shift width for indents
+set tabstop=2				" Set the default tabstop
+set softtabstop=2
+set shiftwidth=2			" Set the default shift width for indents
 set smarttab				" Smarter tab levels
 set expandtab
 
@@ -60,7 +73,7 @@ set cinoptions=:s,ps,ts,cs
 set cinwords=if,else,while,do,for,switch,case
 
 syntax on
-set foldmethod=syntax		" http://www.douban.com/group/topic/28307548/ 
+set foldmethod=manual		" http://www.douban.com/group/topic/28307548/ 
 filetype plugin indent on	" Automatically detect file types
 " }}}
 
