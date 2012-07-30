@@ -105,6 +105,7 @@ au BufReadPost * set relativenumber
 " Key mappings {{{
 noremap H ^
 noremap L $
+noremap = +
 nnoremap <CR> o
 " Smart escape
 inoremap jk <Esc>
