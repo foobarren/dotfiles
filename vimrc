@@ -127,6 +127,9 @@ inoremap <C-k> <Esc><Right>C
 map <Left> :bp<CR>
 map <Right> :bn<CR>
 noremap <CR> :buffers<CR>
+" map up & down to gk & gj for convenient in wrap model
+noremap <Up> gk
+noremap <Down> gj
 " write with sudo
 cnoremap w!! w !sudo tee % >/dev/null
 " In many terminal emulators the mouse works just fine, thus enable it.
