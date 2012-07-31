@@ -106,7 +106,6 @@ au BufReadPost * set relativenumber
 noremap H ^
 noremap L $
 noremap = +
-nnoremap <CR> o
 " Smart escape
 inoremap jk <Esc>
 inoremap kj <Esc>
@@ -124,6 +123,10 @@ inoremap <M-f> <C-o>w
 inoremap <C-w> <Esc><Right>cb
 inoremap <C-u> <Esc><Right>c0
 inoremap <C-k> <Esc><Right>C
+" use left & right key to switch between buffers
+map <Left> :bp<CR>
+map <Right> :bn<CR>
+noremap <CR> :buffers<CR>
 " write with sudo
 cnoremap w!! w !sudo tee % >/dev/null
 " In many terminal emulators the mouse works just fine, thus enable it.
