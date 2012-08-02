@@ -36,6 +36,8 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/usr/local/sbin
 
+stty -ixon
+
 # Shortcuts
 alias kdx="ssh kdx"
 alias ld="ssh ld"

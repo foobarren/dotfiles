@@ -124,8 +124,8 @@ inoremap <C-w> <Esc><Right>cb
 inoremap <C-u> <Esc><Right>c0
 inoremap <C-k> <Esc><Right>C
 " use left & right key to switch between buffers
-map <Left> :bp<CR>
-map <Right> :bn<CR>
+noremap <Left> :bp<CR>
+noremap <Right> :bn<CR>
 noremap <CR> :buffers<CR>
 " map up & down to gk & gj for convenient in wrap model
 noremap <Up> gk
@@ -142,6 +142,10 @@ vnoremap > >gv
 " make Y behave like other capitals
 map Y y$
 
+" map ctrl + s to save file. need add 'stty -ixon' in the .bashrc or .zshrc
+" if you use vim in the terminal.
+inoremap <C-s> <ESC>:w<CR>a
+nnoremap <C-s> :w<CR>
 " }}}
 
 " Omnifunc {{{
