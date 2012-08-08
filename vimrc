@@ -146,6 +146,12 @@ map Y y$
 " if you use vim in the terminal.
 inoremap <C-s> <ESC>:w<CR>a
 nnoremap <C-s> :w<CR>
+
+" map ctrl + w to save & quit.
+nnoremap <C-w> :x<CR>
+
+
+nnoremap <BS> X
 " }}}
 
 " Omnifunc {{{
