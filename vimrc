@@ -45,6 +45,7 @@ let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 Bundle 'mattn/zencoding-vim'
+Bundle 'groenewege/vim-less'
 " }}}
 
 " Formatting {{{
@@ -140,18 +141,15 @@ endif
 vnoremap < <gv
 vnoremap > >gv
 " make Y behave like other capitals
-map Y y$
+noremap Y y$
 
 " map ctrl + s to save file. need add 'stty -ixon' in the .bashrc or .zshrc
 " if you use vim in the terminal.
 inoremap <C-s> <ESC>:w<CR>a
 nnoremap <C-s> :w<CR>
 
-" map ctrl + w to save & quit.
-nnoremap <C-w> :x<CR>
-
-
 nnoremap <BS> X
+nnoremap \ :!open <C-R>%<CR><CR>
 " }}}
 
 " Omnifunc {{{
