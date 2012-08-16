@@ -26,3 +26,8 @@ My various dotfiles (tested to work on OS X).
 
 	Launch vim, run :BundleInstall
 
+5. Enable persistent undo:
+
+	Make sure the directory "~/.vim/undo" is existed
+
+
