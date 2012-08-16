@@ -32,6 +32,7 @@ CASE_SENSITIVE="true"
 plugins=(git, brew)
 
 source $ZSH/oh-my-zsh.sh
+source /usr/local/Cellar/cdargs/1.35/contrib/cdargs-bash.sh
 
 # Customize to your needs...
 export PATH=/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/usr/local/sbin
@@ -45,11 +46,16 @@ alias ld="ssh ld"
 alias psp="ps aux | grep -v grep | grep"
 alias l="ls -alh"
 alias g="git"
+alias gm="git commit -am "
 alias v="vim"
 alias p="cd ~/project"
 alias h="history"
 alias o="open"
 alias oo="open ."
+
+# cdargs
+alias c="cv"
+alias a="ca"
 
 # Get OS X Software Updates, update Homebrew itself, and upgrade installed Homebrew packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade'
