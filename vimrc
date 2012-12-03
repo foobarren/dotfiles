@@ -31,7 +31,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 map <S-m> <plug>NERDTreeTabsToggle<CR>
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'mattn/zencoding-vim'
 Bundle 'Shougo/neocomplcache'
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_auto_select = 1
@@ -46,6 +45,13 @@ let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 Bundle 'mattn/zencoding-vim'
 Bundle 'groenewege/vim-less'
+Bundle 'scrooloose/syntastic'
+let g:syntastic_check_on_open=1
+let g:syntastic_phpcs_conf = "--tab-width=4 --standard=CodeIgniter"
+Bundle 'tpope/vim-markdown'
+Bundle 'vim-scripts/bufexplorer.zip'
+noremap <silent> z :BufExplorer<CR>
+
 " }}}
 
 " Formatting {{{
@@ -107,11 +113,6 @@ au BufReadPost * set relativenumber
 noremap H ^
 noremap L $
 noremap = +
-" Smart escape
-inoremap jk <Esc>
-inoremap kj <Esc>
-inoremap jj <Esc>
-inoremap kk <Esc>
 " emacs style key binding for insert mode
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
