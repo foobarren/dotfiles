@@ -48,7 +48,7 @@ alias l="ls -alh"
 alias g="git"
 alias gm="git commit -am "
 alias v="vim"
-alias p="cd ~/project"
+alias p="proxychains4 -q"
 alias h="history"
 alias o="open"
 alias oo="open ."
@@ -66,3 +66,22 @@ alias iip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
 
 
+# GFW
+alias sd="cd ~/autologin/shadowsockets && ./local.js"
+
+# Easy cake
+alias xj="cd ~/project/xiaoju"
+alias xjc="xj && cake dev"
+alias hb="cd ~/project/hbadmin"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
+
+export LANG="zh_CN.UTF-8"
+export LC_COLLATE="zh_CN.UTF-8"
+export LC_CTYPE="zh_CN.UTF-8"
+export LC_MESSAGES="zh_CN.UTF-8"
+export LC_MONETARY="zh_CN.UTF-8"
+export LC_NUMERIC="zh_CN.UTF-8"
+export LC_TIME="zh_CN.UTF-8"
+export LC_ALL=
