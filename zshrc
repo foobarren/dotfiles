@@ -7,10 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bira"
 
-# Example aliases
-alias zshconfig="vim ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
 
@@ -29,7 +25,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git, brew)
+plugins=(git brew cake)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/local/Cellar/cdargs/1.35/contrib/cdargs-bash.sh
@@ -45,13 +41,12 @@ alias ld="ssh ld"
 
 alias psp="ps aux | grep -v grep | grep"
 alias l="ls -alh"
-alias g="git"
-alias gm="git commit -am "
 alias v="vim"
 alias p="proxychains4 -q"
 alias h="history"
 alias o="open"
 alias oo="open ."
+
 
 # cdargs
 alias c="cv"
