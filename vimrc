@@ -88,9 +88,13 @@ filetype plugin indent on	" Automatically detect file types
 set ruler					" Show the cursor position all the time
 set showcmd					" Display incomplete commands
 
-set background=dark
-let g:solarized_termcolors=256
-set t_Co=256
+" Have a different background in GUI and terminal modes.
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+
 colorscheme solarized
 
 " Highlight trailing whitespace
