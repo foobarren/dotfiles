@@ -95,7 +95,7 @@ else
     set background=dark
 endif
 
-colorscheme solarized
+:silent! colorscheme solarized
 
 " Highlight trailing whitespace
 :highlight TrailWhitespace ctermbg=red guibg=red
