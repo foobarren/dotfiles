@@ -50,7 +50,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_phpcs_conf = "--tab-width=4 --standard=CodeIgniter"
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/bufexplorer.zip'
-noremap <silent> z :BufExplorer<CR>
+noremap <silent> <CR> :BufExplorer<CR>
 
 " }}}
 
@@ -130,9 +130,8 @@ inoremap <C-w> <Esc><Right>cb
 inoremap <C-u> <Esc><Right>c0
 inoremap <C-k> <Esc><Right>C
 " use left & right key to switch between buffers
-noremap <Left> :bp<CR>
-noremap <Right> :bn<CR>
-noremap <CR> :buffers<CR>
+noremap <silent> <Left> :bp<CR>
+noremap <silent> <Right> :bn<CR>
 " map up & down to gk & gj for convenient in wrap model
 noremap <Up> gk
 noremap <Down> gj
