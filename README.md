@@ -1,6 +1,8 @@
 ## About
 My various dotfiles (tested to work on OS X).
 
+![image](preview/vim.png)
+
 ## How to use
 1. Setup [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/) (Optional):
 
