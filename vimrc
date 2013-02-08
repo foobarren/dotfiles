@@ -51,6 +51,9 @@ let g:syntastic_phpcs_conf = "--tab-width=4 --standard=CodeIgniter"
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/bufexplorer.zip'
 noremap <silent> <CR> :BufExplorer<CR>
+Bundle 'tpope/vim-rails'
+Bundle 'vim-scripts/grep.vim'
+Bundle 'digitaltoad/vim-jade'
 
 " }}}
 
@@ -86,7 +89,8 @@ filetype plugin indent on	" Automatically detect file types
 
 " Visual {{{
 set ruler					" Show the cursor position all the time
-set showcmd					" Display incomplete commands
+set showcmd				" Display incomplete commands
+set cursorcolumn  " Highlight the current column
 
 " Have a different background in GUI and terminal modes.
 if has('gui_running')
