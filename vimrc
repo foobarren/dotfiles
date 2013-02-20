@@ -1,18 +1,20 @@
 " General {{{
-set nocompatible			" Disable vi compatibility
+set nocompatible        " Disable vi compatibility
+set hidden              " Open a new file using :e,
+                        " without being forced to write or undo your changes first
 set encoding=utf-8
-set history=256				" Number of things to remember in history
-set timeoutlen=250			" Time to wait after ESC (default causes an annoying delay)
-set clipboard=unnamed		" Yanks go on clipboard instead
+set history=256         " Number of things to remember in history
+set timeoutlen=250      " Time to wait after ESC (default causes an annoying delay)
+set clipboard=unnamed   " Yanks go on clipboard instead
 " Match & search
-set hlsearch				" Highlight search
-set ignorecase				" Do case in sensitive matching with
-set smartcase				" be sensitive when there's a capital letter
-set incsearch				" Do incremental searching
+set hlsearch            " Highlight search
+set ignorecase          " Do case in sensitive matching with
+set smartcase           " be sensitive when there's a capital letter
+set incsearch           " Do incremental searching
 " Backup & undo
 set nowritebackup
 set nobackup
-set directory=/tmp//		" prepend(^=) $HOME/.tmp/ to default path; use full path as backup filename(//)
+set directory=/tmp//    " prepend(^=) $HOME/.tmp/ to default path; use full path as backup filename(//)
 
 set undofile
 set undodir=~/.vim/undo
@@ -121,6 +123,7 @@ au BufReadPost * set relativenumber
 noremap H ^
 noremap L $
 noremap = +
+nnoremap ; :
 " emacs style key binding for insert mode
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
