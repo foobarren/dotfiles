@@ -29,8 +29,7 @@ plugins=(git brew cake gem npm osx redis-cli rails3 vi-mode git-extras)
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/usr/local/sbin
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/usr/local/sbin:$HOME/.rvm/bin:/usr/local/share/npm/bin
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
 stty -ixon
