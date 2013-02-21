@@ -6,6 +6,7 @@ set encoding=utf-8
 set history=256         " Number of things to remember in history
 set timeoutlen=250      " Time to wait after ESC (default causes an annoying delay)
 set clipboard=unnamed   " Yanks go on clipboard instead
+set lazyredraw          " Don't redraw while executing macros (good performance config)
 " Match & search
 set hlsearch            " Highlight search
 set ignorecase          " Do case in sensitive matching with
@@ -18,6 +19,8 @@ set directory=/tmp//    " prepend(^=) $HOME/.tmp/ to default path; use full path
 
 set undofile
 set undodir=~/.vim/undo
+
+:let mapleader = ","
 " }}}
 
 " Vundle {{{
@@ -35,16 +38,23 @@ map <S-m> <plug>NERDTreeTabsToggle<CR>
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Shougo/neocomplcache'
 let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_min_syntax_length = 5
 let g:neocomplcache_enable_auto_select = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.
-let g:neocomplcache_enable_underbar_completion = 1
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+if !exists('g:neocomplcache_same_filetype_lists')
+  let g:neocomplcache_same_filetype_lists = {}
+endif
+inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+inoremap <expr><Leader><ESC>  pumvisible() ? neocomplcache#cancel_popup() : "\<ESC>"
+Bundle 'Shougo/neosnippet.git'
+let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? neocomplcache#close_popup() : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
 Bundle 'mattn/zencoding-vim'
 Bundle 'groenewege/vim-less'
 Bundle 'scrooloose/syntastic'
@@ -60,20 +70,20 @@ Bundle 'digitaltoad/vim-jade'
 " }}}
 
 " Formatting {{{
-set fo-=o					" Do not insert the current comment leader after hitting 'o' or 'O' in Normal mode.
-set fo-=r					" Do not automatically insert a comment leader after an enter
-set fo-=t					" Do not auto-wrap text using textwidth (does not apply to comments)
+set fo-=o         " Do not insert the current comment leader after hitting 'o' or 'O' in Normal mode.
+set fo-=r         " Do not automatically insert a comment leader after an enter
+set fo-=t         " Do not auto-wrap text using textwidth (does not apply to comments)
 
 set nowrap
-set textwidth=0				" Don't wrap lines by default
-set wildmode=longest,list	" At command line, complete longest common string, then list alternatives.
+set textwidth=0   " Don't wrap lines by default
+set wildmode=longest,list " At command line, complete longest common string, then list alternatives.
 
 set backspace=indent,eol,start
 
-set tabstop=2				" Set the default tabstop
+set tabstop=2     " Set the default tabstop
 set softtabstop=2
-set shiftwidth=2			" Set the default shift width for indents
-set smarttab				" Smarter tab levels
+set shiftwidth=2  " Set the default shift width for indents
+set smarttab      " Smarter tab levels
 set expandtab
 
 " indent setting
@@ -85,13 +95,13 @@ set cinoptions=:s,ps,ts,cs
 set cinwords=if,else,while,do,for,switch,case
 
 syntax on
-set foldmethod=manual		" http://www.douban.com/group/topic/28307548/ 
-filetype plugin indent on	" Automatically detect file types
+set foldmethod=manual
+filetype plugin indent on " Automatically detect file types
 " }}}
 
 " Visual {{{
-set ruler					" Show the cursor position all the time
-set showcmd				" Display incomplete commands
+set ruler         " Show the cursor position all the time
+set showcmd       " Display incomplete commands
 set cursorcolumn  " Highlight the current column
 
 " Have a different background in GUI and terminal modes.
@@ -107,7 +117,7 @@ endif
 :highlight TrailWhitespace ctermbg=red guibg=red
 :match TrailWhitespace /\s\+$\| \+\ze\t/
 
-set wrap
+set nowrap
 set whichwrap=b,s,<,>,[,],h,l
 
 " list setting
@@ -135,7 +145,6 @@ inoremap <M-b> <C-o>b
 inoremap <M-f> <C-o>w
 inoremap <C-w> <Esc><Right>cb
 inoremap <C-u> <Esc><Right>c0
-inoremap <C-k> <Esc><Right>C
 " use left & right key to switch between buffers
 noremap <silent> <Left> :bp<CR>
 noremap <silent> <Right> :bn<CR>
@@ -149,10 +158,17 @@ if has('mouse')
   set mouse=a
 endif
 " reselect visual block after indent/outdent
-vnoremap < <gv
-vnoremap > >gv
+vnoremap , <gv
+vnoremap . >gv
 " make Y behave like other capitals
 noremap Y y$
+
+" Quickly insert parenthesis/brackets/etc.
+inoremap (( ()<esc>i
+inoremap [[ []<esc>i
+inoremap "" ""<esc>i
+inoremap '' ''<esc>i
+inoremap {{ {<esc>o}<esc>O
 
 " map ctrl + s to save file. need add 'stty -ixon' in the .bashrc or .zshrc
 " if you use vim in the terminal.
