@@ -3,34 +3,20 @@ My various dotfiles (tested to work on OS X).
 
 ![image](https://raw.github.com/luin/dotfiles/master/preview/vim.png)
 
-## How to use
-1. Setup [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/) (Optional):
+## Install
+> **WARNING** You should backup your dotfiles(.zshrc, .vimrc, .vim/*) first.
 
-	```
-	$ wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
-	```
+To install all dotfiles:
+  
+  ```
+  wget https://raw.github.com/luin/dotfiles/master/Makefile -O - | make -- install
+  ```
 
-2. Install my dotfiles:
+Just wanna install vim files:
 
-	```
-	$ git clone https://github.com/luin/dotfiles.git
-	$ cd dotfiles && make install
-	```
-
-3. Setup [Vundle](http://github.com/gmarik/vundle)
-
-     ```
-     $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-     ```
-
-
-4. Install Vim bundles:
-
-	Launch vim, run :BundleInstall
-
-5. Enable persistent undo:
-
-	Make sure the directory "~/.vim/undo" is existed
+  ```
+  wget https://raw.github.com/luin/dotfiles/master/Makefile -O - | make -- install-vim
+  ```
 
 ## FAQ
 Q1: I got the following errors when I use `sudo vim filename`:
