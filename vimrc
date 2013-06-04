@@ -20,7 +20,7 @@ set directory=/tmp//    " prepend(^=) $HOME/.tmp/ to default path; use full path
 set undofile
 set undodir=~/.vim/undo
 
-:let mapleader = ","
+let mapleader = "\<space>"
 " }}}
 
 " Vundle {{{
@@ -29,7 +29,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-easymotion'
-let g:EasyMotion_leader_key = ','
+let g:EasyMotion_leader_key = 'f'
 Bundle 'Lokaltog/vim-powerline'
 set laststatus=2
 Bundle 'scrooloose/nerdtree'
@@ -44,28 +44,40 @@ if !exists('g:neocomplcache_same_filetype_lists')
   let g:neocomplcache_same_filetype_lists = {}
 endif
 inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-inoremap <expr><Leader><ESC>  pumvisible() ? neocomplcache#cancel_popup() : "\<ESC>"
+inoremap <expr><Leader><Esc>  pumvisible() ? neocomplcache#cancel_popup() : "\<Esc>"
 Bundle 'Shougo/neosnippet.git'
 let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
 " SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? neocomplcache#close_popup() : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+imap <expr><Tab> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? neocomplcache#close_popup() : "\<Tab>"
+smap <expr><Tab> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<Tab>"
 
 " For snippet_complete marker.
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
-Bundle 'mattn/zencoding-vim'
 Bundle 'groenewege/vim-less'
 Bundle 'scrooloose/syntastic'
 let g:syntastic_check_on_open=1
 let g:syntastic_phpcs_conf = "--tab-width=4 --standard=CodeIgniter"
+let g:syntastic_javascript_checkers=['jslint']
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/bufexplorer.zip'
 noremap <silent> <CR> :BufExplorer<CR>
-Bundle 'tpope/vim-rails'
-Bundle 'vim-scripts/grep.vim'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'mileszs/ack.vim'
+Bundle 'vim-scripts/nerdtree-ack'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'Raimondi/delimitMate'
+Bundle 'snipmate-snippets'
+" Dash
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+:nmap <silent> Q <Plug>DashSearch
+Bundle "pangloss/vim-javascript"
+Bundle "tpope/vim-commentary"
+Bundle "tpope/vim-fugitive"
+Bundle "skammer/vim-css-color"
 
 " }}}
 
@@ -95,7 +107,10 @@ set cinoptions=:s,ps,ts,cs
 set cinwords=if,else,while,do,for,switch,case
 
 syntax on
-set foldmethod=manual
+set foldmethod=indent
+set foldlevel=2
+set foldlevelstart=20 " All folds open when opening a file
+
 filetype plugin indent on " Automatically detect file types
 " }}}
 
@@ -132,19 +147,23 @@ au BufReadPost * set relativenumber
 " Key mappings {{{
 noremap H ^
 noremap L $
-noremap = +
 nnoremap ; :
+nnoremap : ;
 " emacs style key binding for insert mode
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
+inoremap <Leader>e <End>
 inoremap <C-p> <Up>
 inoremap <C-n> <Down>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <M-b> <C-o>b
 inoremap <M-f> <C-o>w
-inoremap <C-w> <Esc><Right>cb
 inoremap <C-u> <Esc><Right>c0
+
+xnoremap p pgvy
+noremap vp viwpgvy
+noremap vy yiw
 " use left & right key to switch between buffers
 noremap <silent> <Left> :bp<CR>
 noremap <silent> <Right> :bn<CR>
@@ -160,23 +179,27 @@ endif
 " reselect visual block after indent/outdent
 vnoremap , <gv
 vnoremap . >gv
+
 " make Y behave like other capitals
 noremap Y y$
 
 " Quickly insert parenthesis/brackets/etc.
-inoremap (( ()<esc>i
-inoremap [[ []<esc>i
-inoremap "" ""<esc>i
-inoremap '' ''<esc>i
-inoremap {{ {<esc>o}<esc>O
+" inoremap (( <Esc>I(<Esc>A)<Esc>I
 
-" map ctrl + s to save file. need add 'stty -ixon' in the .bashrc or .zshrc
-" if you use vim in the terminal.
-inoremap <C-s> <ESC>:w<CR>a
-nnoremap <C-s> :w<CR>
+"" map ctrl + s to save file. need add 'stty -ixon' in the .bashrc or .zshrc
+"" if you use vim in the terminal.
+" inoremap <C-s> <Esc>:w<CR>a
+" nnoremap <C-s> :w<CR>
 
 nnoremap <BS> X
+nnoremap <Tab> %
 nnoremap \ :!open <C-R>%<CR><CR>
+
+" Window Navigation
+map <C-J> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 " }}}
 
 " Omnifunc {{{
@@ -187,4 +210,27 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
+" }}}
+
+" MacVim {{{
+if has("gui_running")
+    set go=aAce  " remove toolbar
+    "set transparency=30
+    set guifont=Monaco:h13
+    set showtabline=2
+    set columns=140
+    set lines=40
+    noremap <D-M-Left> :tabprevious<cr>
+    noremap <D-M-Right> :tabnext<cr>
+    map <D-1> 1gt
+    map <D-2> 2gt
+    map <D-3> 3gt
+    map <D-4> 4gt
+    map <D-5> 5gt
+    map <D-6> 6gt
+    map <D-7> 7gt
+    map <D-8> 8gt
+    map <D-9> 9gt
+    map <D-0> :tablast<CR>
+endif
 " }}}
