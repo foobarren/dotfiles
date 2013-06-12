@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+zstyle ':completion:*:manuals'    separate-sections true
+zstyle ':completion:*:manuals.*'  insert-sections   true
+zstyle ':completion:*:man:*'      menu yes select
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -25,11 +28,11 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew cake gem npm osx redis-cli rails3 vi-mode git-extras git-flow)
+plugins=(git brew cake gem npm osx redis-cli rails3 git-extras git-flow)
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/usr/local/sbin:$HOME/.rvm/bin:/usr/local/share/npm/bin
+export PATH=/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/usr/local/sbin:$HOME/.rvm/bin:/usr/local/share/npm/bin:/Applications/MNPP/init
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
 # Shortcuts
@@ -44,9 +47,6 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade'
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias iip="ipconfig getifaddr en1"
-
-# GFW
-alias sd="cd ~/autologin/shadowsockets && ./local.js"
 
 # Language
 export LANG="zh_CN.UTF-8"

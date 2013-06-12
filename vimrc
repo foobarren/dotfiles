@@ -20,7 +20,6 @@ set directory=/tmp//    " prepend(^=) $HOME/.tmp/ to default path; use full path
 set undofile
 set undodir=~/.vim/undo
 
-let mapleader = "\<space>"
 " }}}
 
 " Vundle {{{
@@ -29,7 +28,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-easymotion'
-let g:EasyMotion_leader_key = 'f'
+let g:EasyMotion_leader_key = '<space>'
 Bundle 'Lokaltog/vim-powerline'
 set laststatus=2
 Bundle 'scrooloose/nerdtree'
