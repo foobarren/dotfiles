@@ -33,13 +33,17 @@ plugins=(git brew cake gem npm osx redis-cli rails3 git-extras git-flow)
 source $ZSH/oh-my-zsh.sh
 
 export PATH=/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/usr/local/sbin:$HOME/.rvm/bin:/usr/local/share/npm/bin:/Applications/MNPP/init
+export PATH=$PATH:/Users/luin/.rvm/gems/ruby-1.9.3-p194/bin
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
+
+source ~/.nvm/nvm.sh
 
 # Shortcuts
 alias psgrep="ps aux | grep -v grep | grep"
 alias l="ls -alh"
 alias v="vim"
 alias p="proxychains4 -q"
+mkcd() { mkdir -p "$@" && cd "$_"; }
 
 # Get OS X Software Updates, update Homebrew itself, and upgrade installed Homebrew packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade'

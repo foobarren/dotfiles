@@ -6,6 +6,9 @@ set encoding=utf-8
 set history=256         " Number of things to remember in history
 set timeoutlen=250      " Time to wait after ESC (default causes an annoying delay)
 set clipboard=unnamed   " Yanks go on clipboard instead
+if $TMUX == ''
+  set clipboard+=unnamed
+endif
 set lazyredraw          " Don't redraw while executing macros (good performance config)
 " Match & search
 set hlsearch            " Highlight search
@@ -20,17 +23,22 @@ set directory=/tmp//    " prepend(^=) $HOME/.tmp/ to default path; use full path
 set undofile
 set undodir=~/.vim/undo
 
+autocmd! bufwritepost .vimrc source %
 " }}}
 
 " Vundle {{{
 filetype off
+filetype plugin indent off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-easymotion'
-let g:EasyMotion_leader_key = '<space>'
-Bundle 'Lokaltog/vim-powerline'
-set laststatus=2
+let g:EasyMotion_leader_key = 'f'
+" Bundle 'Lokaltog/vim-powerline'
+" set laststatus=2
+Bundle 'bling/vim-airline'
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 map <S-m> <plug>NERDTreeTabsToggle<CR>
@@ -76,7 +84,14 @@ Bundle 'rizzatti/dash.vim'
 Bundle "pangloss/vim-javascript"
 Bundle "tpope/vim-commentary"
 Bundle "tpope/vim-fugitive"
-Bundle "skammer/vim-css-color"
+Bundle 'terryma/vim-expand-region'
+map <Space> <Plug>(expand_region_expand)
+map - <Plug>(expand_region_shrink)
+noremap + =
+Bundle 'thiderman/nginx-vim-syntax'
+Bundle 'mattn/emmet-vim'
+Bundle 'jnwhiteh/vim-golang'
+set runtimepath+=$GOROOT/misc/vim
 
 " }}}
 
@@ -117,6 +132,7 @@ filetype plugin indent on " Automatically detect file types
 set ruler         " Show the cursor position all the time
 set showcmd       " Display incomplete commands
 set cursorcolumn  " Highlight the current column
+set cursorline    " Highlight the current line
 
 " Have a different background in GUI and terminal modes.
 if has('gui_running')
@@ -151,18 +167,14 @@ nnoremap : ;
 " emacs style key binding for insert mode
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
-inoremap <Leader>e <End>
-inoremap <C-p> <Up>
-inoremap <C-n> <Down>
-inoremap <C-b> <Left>
-inoremap <C-f> <Right>
-inoremap <M-b> <C-o>b
-inoremap <M-f> <C-o>w
+inoremap <C-b> <C-o>b
+inoremap <C-w> <C-o>w
 inoremap <C-u> <Esc><Right>c0
 
 xnoremap p pgvy
 noremap vp viwpgvy
 noremap vy yiw
+nnoremap K "_d
 " use left & right key to switch between buffers
 noremap <silent> <Left> :bp<CR>
 noremap <silent> <Right> :bn<CR>
@@ -193,12 +205,14 @@ noremap Y y$
 nnoremap <BS> X
 nnoremap <Tab> %
 nnoremap \ :!open <C-R>%<CR><CR>
+nnoremap U <C-r>
 
 " Window Navigation
-map <C-J> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+noremap <C-J> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+noremap <C-W>l <C-l>
 " }}}
 
 " Omnifunc {{{
