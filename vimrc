@@ -9,6 +9,7 @@ set clipboard=unnamed   " Yanks go on clipboard instead
 if $TMUX == ''
   set clipboard+=unnamed
 endif
+set t_Co=256
 set lazyredraw          " Don't redraw while executing macros (good performance config)
 " Match & search
 set hlsearch            " Highlight search
@@ -34,8 +35,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-easymotion'
 let g:EasyMotion_leader_key = 'f'
-" Bundle 'Lokaltog/vim-powerline'
-" set laststatus=2
 Bundle 'bling/vim-airline'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
@@ -83,7 +82,11 @@ Bundle 'rizzatti/dash.vim'
 :nmap <silent> Q <Plug>DashSearch
 Bundle "pangloss/vim-javascript"
 Bundle "tpope/vim-commentary"
-Bundle "tpope/vim-fugitive"
+nmap <BS> gcc
+vmap <BS> gc
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
 Bundle 'terryma/vim-expand-region'
 map <Space> <Plug>(expand_region_expand)
 map - <Plug>(expand_region_shrink)
@@ -91,7 +94,9 @@ noremap + =
 Bundle 'thiderman/nginx-vim-syntax'
 Bundle 'mattn/emmet-vim'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'gkz/vim-ls'
 set runtimepath+=$GOROOT/misc/vim
+Bundle 'mustache/vim-mode'
 
 " }}}
 
@@ -138,7 +143,7 @@ set cursorline    " Highlight the current line
 if has('gui_running')
     set background=light
 else
-    set background=dark
+    set background=light
 endif
 
 :silent! colorscheme solarized
@@ -202,7 +207,6 @@ noremap Y y$
 " inoremap <C-s> <Esc>:w<CR>a
 " nnoremap <C-s> :w<CR>
 
-nnoremap <BS> X
 nnoremap <Tab> %
 nnoremap \ :!open <C-R>%<CR><CR>
 nnoremap U <C-r>
