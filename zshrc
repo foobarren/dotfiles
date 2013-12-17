@@ -28,7 +28,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew cake gem npm osx redis-cli rails3 git-extras git-flow zsh-syntax-highlighting)
+plugins=(git brew cake gem npm osx redis-cli rails git-extras git-flow zsh-syntax-highlighting)
 
 # ZSH-SYNTAX-HIGHLIGHTING
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
@@ -77,4 +77,3 @@ export DYLD_LIBRARY_PATH=/Applications/MNPP/init:/Applications/MNPP/Library/lib:
 
 alias fpm='sudo /Applications/MNPP/init/php.sh 54 start'
 export PATH=/usr/local/sbin:/Applications/MNPP/init:/Applications/MNPP/Library/php54/bin:/Applications/MNPP/Library/mysql/bin:/Users/Luin/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/Luin/.rvm/bin:/Users/Luin/.rvm/bin:/Users/luin/.rvm/bin:/usr/local/opt/ruby/bin
-alias node='node --harmony-generators'

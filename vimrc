@@ -65,12 +65,10 @@ Bundle 'groenewege/vim-less'
 Bundle 'scrooloose/syntastic'
 let g:syntastic_check_on_open=1
 let g:syntastic_phpcs_conf = "--tab-width=4 --standard=CodeIgniter"
-let g:syntastic_javascript_checkers=['jslint']
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/bufexplorer.zip'
 noremap <silent> <CR> :BufExplorer<CR>
 Bundle 'digitaltoad/vim-jade'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/nerdtree-ack'
 Bundle 'terryma/vim-multiple-cursors'
@@ -81,6 +79,7 @@ Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 :nmap <silent> Q <Plug>DashSearch
 Bundle "pangloss/vim-javascript"
+let g:javascript_conceal=1
 Bundle "tpope/vim-commentary"
 nmap <BS> gcc
 vmap <BS> gc
@@ -97,6 +96,12 @@ Bundle 'jnwhiteh/vim-golang'
 Bundle 'gkz/vim-ls'
 set runtimepath+=$GOROOT/misc/vim
 Bundle 'mustache/vim-mode'
+Bundle 'kchmck/vim-coffee-script'
+autocmd FileType litcoffee runtime ftplugin/coffee.vim
+Bundle 'mintplant/vim-literate-coffeescript'
+Bundle 'kien/ctrlp.vim'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+Bundle 'tpope/vim-fugitive'
 
 " }}}
 
@@ -251,3 +256,5 @@ if has("gui_running")
     map <D-0> :tablast<CR>
 endif
 " }}}
+
+autocmd BufReadPre * if getfsize(expand("%")) > 10000000 | syntax off | endif
