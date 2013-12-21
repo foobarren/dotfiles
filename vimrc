@@ -32,57 +32,88 @@ filetype off
 filetype plugin indent off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-easymotion'
 let g:EasyMotion_leader_key = 'f'
+
 Bundle 'bling/vim-airline'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 map <S-m> <plug>NERDTreeTabsToggle<CR>
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'Shougo/neocomplcache'
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_min_syntax_length = 5
-let g:neocomplcache_enable_auto_select = 1
-if !exists('g:neocomplcache_same_filetype_lists')
-  let g:neocomplcache_same_filetype_lists = {}
-endif
-inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-inoremap <expr><Leader><Esc>  pumvisible() ? neocomplcache#cancel_popup() : "\<Esc>"
-Bundle 'Shougo/neosnippet.git'
-let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
-" SuperTab like snippets behavior.
-imap <expr><Tab> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? neocomplcache#close_popup() : "\<Tab>"
-smap <expr><Tab> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<Tab>"
 
-" For snippet_complete marker.
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'Shougo/neocomplete.vim'
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+
+Bundle 'Shougo/neosnippet.vim'
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+
 Bundle 'groenewege/vim-less'
 Bundle 'scrooloose/syntastic'
 let g:syntastic_check_on_open=1
 let g:syntastic_phpcs_conf = "--tab-width=4 --standard=CodeIgniter"
+
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/bufexplorer.zip'
 noremap <silent> <CR> :BufExplorer<CR>
+
 Bundle 'digitaltoad/vim-jade'
 Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/nerdtree-ack'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'Raimondi/delimitMate'
 Bundle 'snipmate-snippets'
+
 " Dash
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 :nmap <silent> Q <Plug>DashSearch
+
 Bundle "pangloss/vim-javascript"
-let g:javascript_conceal=1
 Bundle "tpope/vim-commentary"
 nmap <BS> gcc
 vmap <BS> gc
+
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
@@ -90,17 +121,21 @@ Bundle 'terryma/vim-expand-region'
 map <Space> <Plug>(expand_region_expand)
 map - <Plug>(expand_region_shrink)
 noremap + =
+
 Bundle 'thiderman/nginx-vim-syntax'
 Bundle 'mattn/emmet-vim'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'gkz/vim-ls'
 set runtimepath+=$GOROOT/misc/vim
+
 Bundle 'mustache/vim-mode'
 Bundle 'kchmck/vim-coffee-script'
 autocmd FileType litcoffee runtime ftplugin/coffee.vim
+
 Bundle 'mintplant/vim-literate-coffeescript'
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
 Bundle 'tpope/vim-fugitive'
 
 " }}}
