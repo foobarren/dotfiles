@@ -9,12 +9,12 @@ My various dotfiles (tested to work on OS X).
 To install all dotfiles:
   
   ```
-  wget https://raw.github.com/luin/dotfiles/master/Makefile -O - | make -- install
+  make install
   ```
 
 Only install vim files:
 
   ```
-  wget https://raw.github.com/luin/dotfiles/master/Makefile -O - | make -- install-vim
+  make install-vim
   ```
 
