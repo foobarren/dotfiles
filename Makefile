@@ -11,7 +11,7 @@ install-zsh: download zsh
 
 download:
 	@rm -rf $(dest)
-	git clone --recursive -q $(master) $(dest)
+	git clone $(master) $(dest)
 
 zsh:
 	ln -fs $(dest)/zshrc ~/.zshrc
@@ -22,4 +22,3 @@ vim:
 	git clone -q $(vundle) ~/.vim/bundle/vundle
 	@vim +BundleInstall +qall
 	@mkdir -p ~/.vim/undo
-	@cp -r $(dest)/snipmate-snippets/snippets ~/.vim/bundle/snipmate-snippets
