@@ -40,8 +40,6 @@ export PATH=/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/usr/local/sbin:$HOME/.
 export PATH=$PATH:/Users/luin/.rvm/gems/ruby-1.9.3-p194/bin
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
-source ~/.nvm/nvm.sh
-
 # Shortcuts
 alias psgrep="ps aux | grep -v grep | grep"
 alias l="ls -alh"
