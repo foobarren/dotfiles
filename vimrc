@@ -100,9 +100,11 @@ noremap <silent> <CR> :BufExplorer<CR>
 Bundle 'digitaltoad/vim-jade'
 Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/nerdtree-ack'
-Bundle 'terryma/vim-multiple-cursors'
+
+" ISSUE: https://github.com/joedicastro/dotfiles/issues/12
+" Bundle 'terryma/vim-multiple-cursors'
+Bundle 'joedicastro/vim-multiple-cursors'
 Bundle 'Raimondi/delimitMate'
-Bundle 'snipmate-snippets'
 
 " Dash
 Bundle 'rizzatti/funcoo.vim'
@@ -293,3 +295,4 @@ endif
 " }}}
 
 autocmd BufReadPre * if getfsize(expand("%")) > 10000000 | syntax off | endif
+
