@@ -211,6 +211,7 @@ noremap H ^
 noremap L $
 nnoremap ; :
 nnoremap : ;
+:ca w; w
 " emacs style key binding for insert mode
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
