@@ -52,6 +52,10 @@ export DISABLE_AUTO_TITLE=true
 source ~/.bin/tmuxinator.zsh
 alias m="mux start"
 
+# Git
+alias glog="git l"
+alias gla="git la"
+
 # Language
 export LANG="zh_CN.UTF-8"
 export LC_COLLATE="zh_CN.UTF-8"
