@@ -72,6 +72,8 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType make setlocal noexpandtab
+
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
@@ -169,6 +171,12 @@ set cinoptions=:s,ps,ts,cs
 set cinwords=if,else,while,do,for,switch,case
 
 syntax on
+set synmaxcol=128
+
+set ttyfast " u got a fast terminal
+set ttyscroll=3
+set lazyredraw " to avoid scrolling problems
+
 set foldmethod=indent
 set foldlevel=2
 set foldlevelstart=20 " All folds open when opening a file
@@ -224,6 +232,9 @@ xnoremap p pgvy
 noremap vp viwpgvy
 noremap vy yiw
 nnoremap K "_d
+" nnoremap ~ /=expand("<cword>")
+nnoremap ~ ma*
+
 " use left & right key to switch between buffers
 noremap <silent> <Left> :bp<CR>
 noremap <silent> <Right> :bn<CR>
@@ -231,7 +242,7 @@ noremap <silent> <Right> :bn<CR>
 noremap <Up> gk
 noremap <Down> gj
 " write with sudo
-cnoremap w!! w !sudo tee % >/dev/null
+cmap w!! w !sudo tee %
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
