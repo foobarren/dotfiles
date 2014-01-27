@@ -171,7 +171,7 @@ set cinoptions=:s,ps,ts,cs
 set cinwords=if,else,while,do,for,switch,case
 
 syntax on
-set synmaxcol=128
+set synmaxcol=248
 
 set ttyfast " u got a fast terminal
 set ttyscroll=3
