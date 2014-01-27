@@ -33,6 +33,7 @@ filetype plugin indent off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-easymotion'
 let g:EasyMotion_leader_key = 'f'
