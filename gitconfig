@@ -2,11 +2,11 @@
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   la = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --all
 [user]
-  name = Zihua Li
-  email = i@zihua.li
+  name = foobarren 
+  email = foobarren@gmail.com
 [core]
   editor = vim
-  excludesfile = /Users/Luin/.gitignore_global
+  excludesfile = /Users/foobarren/.gitignore_global
   ignorecase = false
 [color]
   branch = auto

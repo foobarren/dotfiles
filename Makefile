@@ -1,7 +1,7 @@
 # wget https://raw.github.com/luin/dotfiles/master/Makefile -O - | make -- install
-master=git://github.com/luin/dotfiles.git
+master=git://github.com/foobarren/dotfiles.git
 vundle=git://github.com/gmarik/vundle.git
-dest=~/.luin_dotfiles
+dest=~/.foobarren_dotfiles
 
 all: install
 install: download zsh vim
