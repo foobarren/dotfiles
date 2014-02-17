@@ -441,14 +441,14 @@ nmap <silent><Leader>ew :call ToggleWrap()<CR>
 
 " Ok, a vim for men, get off the cursor keys {{{
 
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+" nnoremap <up> <nop>
+" nnoremap <down> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
 
 " }}}
 
@@ -531,11 +531,11 @@ set listchars=tab:→\ ,eol:↵,trail:·,extends:↷,precedes:↶
 " Folding {{{
 
 set foldmethod=marker
-
+set nofoldenable
 " Toggle folding
 
-nnoremap \ za
-vnoremap \ za
+"nnoremap \ za
+"vnoremap \ za
 
 " }}}
 
@@ -1076,7 +1076,7 @@ nmap <LocalLeader> [menu]
 " }}}
 
 " menus menu
-nnoremap <silent>[menu][menu] :Unite -silent -winheight=20 menu<CR>
+nnoremap <silent>[menu]u :Unite -silent -winheight=20 menu<CR>
 
 " files and dirs menu {{{
 let g:unite_source_menu_menus.files = {
