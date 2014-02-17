@@ -1076,7 +1076,7 @@ nmap <LocalLeader> [menu]
 " }}}
 
 " menus menu
-nnoremap <silent>[menu]u :Unite -silent -winheight=20 menu<CR>
+nnoremap <silent>[menu][menu] :Unite -silent -winheight=20 menu<CR>
 
 " files and dirs menu {{{
 let g:unite_source_menu_menus.files = {
