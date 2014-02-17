@@ -118,7 +118,7 @@ NeoBundleLazy 'godlygeek/csapprox', { 'autoload' :
 " Admin Git
 NeoBundle 'tpope/vim-fugitive'
 " Show git repository changes in the current file
-NeoBundle 'airblade/vim-gitgutter'
+"NeoBundle 'airblade/vim-gitgutter'
 " Git viewer
 NeoBundleLazy 'gregsexton/gitv', {'depends':['tpope/vim-fugitive'],
             \ 'autoload':{'commands':'Gitv'}}
@@ -148,8 +148,9 @@ NeoBundle 'Shougo/vinarise.vim'
 " Python {{{
 
 " Autocompletion
-NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'RyanPineo/neocomplete-ultisnips'
+"NeoBundle 'Shougo/neocomplete.vim'
+"NeoBundle 'RyanPineo/neocomplete-ultisnips'
+NeoBundle 'davidhalter/jedi-vim'
 " A Python plugin
 NeoBundleLazy 'klen/python-mode', {'autoload': {'filetypes': ['python']}}
 " Admin virtualenvs
@@ -165,7 +166,7 @@ NeoBundleLazy 'alfredodeza/coveragepy.vim', {'autoload': {'filetypes': ['python'
 " Code Snippets {{{
 
 " Powerful and advanced Snippets tool
-NeoBundle 'SirVer/ultisnips'
+"NeoBundle 'SirVer/ultisnips'
 
 " }}}
 
@@ -353,8 +354,8 @@ set ignorecase                  " ignore case letters
 " History and permanent undo levels {{{
 
 set history=1000
-set undofile
-set undoreload=1000
+"set undofile
+"set undoreload=1000
 
 " }}}
 
@@ -373,7 +374,7 @@ endfunction
 set backup
 set noswapfile
 set backupdir=$HOME/.vim/tmp/backup/
-set undodir=$HOME/.vim/tmp/undo/
+"set undodir=$HOME/.vim/tmp/undo/
 set directory=$HOME/.vim/tmp/swap/
 set viminfo+=n$HOME/.vim/tmp/viminfo
 
@@ -408,7 +409,7 @@ set autoindent                 " set on the auto-indent
 
 " set formatoptions=qrn1ct
 set textwidth=80
-set colorcolumn=81
+"set colorcolumn=81
 
 function! ToggleWrap()
     let s:nowrap_cc_bg = [22, '#005f00']
