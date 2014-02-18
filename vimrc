@@ -201,8 +201,8 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-commentary'
 " smart digraphs insertion
 NeoBundle 'Rykka/easydigraph.vim'
-" browse the vim undo tree
-NeoBundleLazy 'sjl/gundo.vim', { 'autoload' : {'commands': 'GundoToggle'}}
+" browse the vim undo tree ,comment for not support vim7.2
+"NeoBundleLazy 'sjl/gundo.vim', { 'autoload' : {'commands': 'GundoToggle'}}
 " to insert lorem ipsum blocks
 NeoBundleLazy 'vim-scripts/loremipsum', { 'autoload' :
             \ { 'commands' : 'Loremipsum'}}
@@ -956,10 +956,10 @@ autocmd FileType github-dashboard call airline#add_statusline_func('GHDashboard'
 " 
 
 " Gundo  ------------------------------------------------------------------
+" not support vim7.2
+"nnoremap <Leader>u :GundoToggle<CR>
 
-nnoremap <Leader>u :GundoToggle<CR>
-
-let g:gundo_preview_bottom = 1
+"let g:gundo_preview_bottom = 1
 
 " 
 
@@ -1236,7 +1236,7 @@ let g:unite_source_menu_menus.registers.command_candidates = [
         \'Unite register'],
     \['▷ messages',
         \'Unite output:messages'],
-    \['▷ undo tree      (gundo)                                     ⌘ ,u',
+    \['▷ undo tree ,only vim7.3+ (gundo)                                     ⌘ ,u',
         \'GundoToggle'],
     \]
 nnoremap <silent>[menu]i :Unite -silent menu:registers<CR>
