@@ -1,0 +1,69 @@
+"colorscheme adrian
+set nocompatible    " be iMproved
+nmap <silent> <F2> <ESC><C-w>w
+nmap <silent> <F3> <ESC><C-w>p
+nmap <silent> <F4> <ESC><C-w>-
+nmap <silent> <F5> <ESC><C-w>+
+nmap <silent> <F6> <ESC><C-w><
+nmap <silent> <F7> <ESC><C-w>>
+vmap <silent> <F2> <ESC><C-w>w
+vmap <silent> <F3> <ESC><C-w>p
+vmap <silent> <F4> <ESC><C-w>-
+vmap <silent> <F5> <ESC><C-w>+
+vmap <silent> <F6> <ESC><C-w><
+vmap <silent> <F7> <ESC><C-w>>
+imap <silent> <F2> <ESC><C-w>w
+imap <silent> <F3> <ESC><C-w>p
+imap <silent> <F4> <ESC><C-w>-
+imap <silent> <F5> <ESC><C-w>+
+imap <silent> <F6> <ESC><C-w><
+imap <silent> <F7> <ESC><C-w>>
+filetype plugin on        " required!
+
+set rtp+=~/.vim/bundle/vundle/
+
+call vundle#rc()
+
+" let Vundle manage Vundle
+" " required!
+" Bundle 'gmarik/vundle'
+" " vim-scripts repos
+
+Bundle 'nerdtree'
+
+Bundle 'conque'
+"Bundle 'ervandew/supertab'
+Bundle 'davidhalter/jedi-vim'
+
+Bundle 'terryma/vim-expand-region'
+
+Bundle 'Lokaltog/vim-easymotion'
+let g:EasyMotion_leader_key = 'f'
+
+" for vim-powerline
+"set t_Co=256
+Bundle 'vim-powerline'
+set laststatus=2
+let g:Powerline_colorscheme='solarized256'
+" 
+
+"filetype plugin indent on    " required!
+"
+" TAB替换为空格
+set ft=python sts=4 ts=4 sw=4 noet
+"set expandtab
+" 以下命令将，对于已保存的文件,TAB替换为空格
+" :%retab!
+
+" 取消在已经缩进的基础上再缩进，防止 拷贝粘贴变乱
+"set paste
+set noautoindent
+:command -range=% DD :NERDTreeToggle
+
+:command -range=% XX :ConqueTerm bash
+:command -range=% CC :ConqueTermSplit bash 
+:command -range=% VV :ConqueTermVSplit bash
+:command -range=% BB :ConqueTermTab bash
+
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif

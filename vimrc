@@ -160,7 +160,7 @@ NeoBundleLazy 'Yggdroot/indentLine', {'autoload': {'filetypes': ['python']}}
 " Show reports from coverage.py
 NeoBundleLazy 'alfredodeza/coveragepy.vim', {'autoload': {'filetypes': ['python']}}
 " Sort imports
- NeoBundle 'fisadev/vim-isort', {'autoload': {'filetypes': ['python']}}
+" NeoBundle 'fisadev/vim-isort', {'autoload': {'filetypes': ['python']}}
 " 
 
 " Code Snippets 
@@ -617,15 +617,15 @@ nmap <silent><Leader>et :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Use Ranger as a file explorer 
 
-fun! RangerChooser()
-    exec "silent !ranger --choosefile=/tmp/chosenfile " . expand("%:p:h")
-    if filereadable('/tmp/chosenfile')
-        exec 'edit ' . system('cat /tmp/chosenfile')
-        call system('rm /tmp/chosenfile')
-    endif
-    redraw!
-endfun
-map <Leader>x :call RangerChooser()<CR>
+" fun! RangerChooser()
+"     exec "silent !ranger --choosefile=/tmp/chosenfile " . expand("%:p:h")
+"     if filereadable('/tmp/chosenfile')
+"         exec 'edit ' . system('cat /tmp/chosenfile')
+"         call system('rm /tmp/chosenfile')
+"     endif
+"     redraw!
+" endfun
+" map <Leader>x :call RangerChooser()<CR>
 " 
 
 " Toggle the Quickfix window 
@@ -1133,9 +1133,7 @@ let g:unite_source_menu_menus.files.command_candidates = [
         \'exe "write !sudo tee % >/dev/null"'],
     \['▷ quick save                                                 ⌘ ,w',
         \'normal ,w'],
-    \['▷ open ranger                                                ⌘ ,x',
-        \'call RangerChooser()'],
-    \['▷ open vimfiler                                              ⌘ ,X',
+    \['▷ open vimfiler                                              ⌘ ,x',
         \'VimFiler'],
     \]
 nnoremap <silent>[menu]o :Unite -silent -winheight=17 -start-insert
@@ -1750,7 +1748,7 @@ let g:utl_cfg_hdl_mt_image_png = 'silent :!sxiv %p &'
 
 " VimFiler 
 
-nnoremap <silent><Leader>X :VimFiler<CR>
+nnoremap <silent><Leader>x :VimFiler<CR>
 
 let g:vimfiler_as_default_explorer = 1
 

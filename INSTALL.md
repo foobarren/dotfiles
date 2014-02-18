@@ -9,13 +9,13 @@ My various dotfiles (tested to work on OS X).
 To install all dotfiles:
   
   ```
-  make all
+  ./install.sh all
   ```
 
 Only install vim files:
 
   ```
-  make vim
-  make zsh
+  ./install.sh vim
+  ./install.sh pip
   ```
 
