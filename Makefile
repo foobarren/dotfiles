@@ -6,8 +6,8 @@ dest=~/.foobarren_dotfiles
 all: install
 install: download zsh vim
 
-install-vim: download vim
-install-zsh: download zsh
+vim: download vim
+zsh: download zsh
 
 download:
 	@rm -rf $(dest)
