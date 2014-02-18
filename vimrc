@@ -10,17 +10,17 @@
 " This file is under a lot of stress, it changes frequently, so it's better if
 " you watch the DVCS commits to stay in the loop.
 
-" Setup language {{{ ==========================================================
+" Setup language  ==========================================================
 
 " language en_US.UTF-8           " Solve some plugins incompatibilities
 
-" }}}
+" 
 
-" NEOBUNDLE {{{ ===============================================================
+" NEOBUNDLE  ===============================================================
 
 set nocompatible             " No to the total compatibility with the ancient vi
 
-" NeoBundle auto-installation and setup {{{
+" NeoBundle auto-installation and setup 
 
 " Auto installing NeoBundle
 let iCanHazNeoBundle=1
@@ -42,11 +42,11 @@ call neobundle#rc(expand($HOME.'/.vim/bundle/'))
 
 " is better if NeoBundle rules NeoBundle (needed!)
 NeoBundle 'Shougo/neobundle.vim'
-" }}}
+" 
 
-" BUNDLES (plugins administrated by NeoBundle) {{{
+" BUNDLES (plugins administrated by NeoBundle) 
 
-" Shougo's way {{{
+" Shougo's way 
 
 " Vimproc to asynchronously run commands (NeoBundle, Unite)
 NeoBundle 'Shougo/vimproc', {
@@ -86,9 +86,9 @@ NeoBundleLazy 'Shougo/junkfile.vim', {'autoload':{'commands':'JunkfileOpen',
 " Unite plugin that provides command line completition
 NeoBundle 'majkinetor/unite-cmdmatch'
 
-" }}}
+" 
 
-" Colorschemes {{{
+" Colorschemes 
 
 " Dark themes
 " Improved terminal version of molokai, almost identical to the GUI one
@@ -111,9 +111,9 @@ NeoBundleLazy 'joedicastro/vim-github256', { 'autoload' :
 NeoBundleLazy 'godlygeek/csapprox', { 'autoload' :
         \ { 'commands' : ['CSApprox', 'CSApproxSnapshot']}}
 
-" }}}
+" 
 
-" DCVS {{{
+" DCVS 
 "
 " Admin Git
 NeoBundle 'tpope/vim-fugitive'
@@ -125,27 +125,27 @@ NeoBundleLazy 'gregsexton/gitv', {'depends':['tpope/vim-fugitive'],
 " Browse GitHub events in Vim
 NeoBundle 'joedicastro/vim-github-dashboard'
 
-" }}}
+" 
 
-" Markdown {{{
+" Markdown 
 
 " Markdown Syntax
 NeoBundleLazy 'joedicastro/vim-markdown'
 " Makes a Markdown Extra preview into the browser
 NeoBundleLazy 'joedicastro/vim-markdown-extra-preview'
 
-" }}}
+" 
 
-" Linux tools {{{
+" Linux tools 
 
 " A diff tool for directories
 NeoBundleLazy 'joedicastro/DirDiff.vim', { 'autoload': { 'commands' : 'DirDiff'}}
 " Hexadecimal editor
 NeoBundle 'Shougo/vinarise.vim'
 
-" }}}
+" 
 
-" Python {{{
+" Python 
 
 " Autocompletion
 "NeoBundle 'Shougo/neocomplete.vim'
@@ -161,16 +161,16 @@ NeoBundleLazy 'Yggdroot/indentLine', {'autoload': {'filetypes': ['python']}}
 NeoBundleLazy 'alfredodeza/coveragepy.vim', {'autoload': {'filetypes': ['python']}}
 " Sort imports
  NeoBundle 'fisadev/vim-isort', {'autoload': {'filetypes': ['python']}}
-" }}}
+" 
 
-" Code Snippets {{{
+" Code Snippets 
 
 " Powerful and advanced Snippets tool
 "NeoBundle 'SirVer/ultisnips'
 
-" }}}
+" 
 
-" Syntax {{{
+" Syntax 
 
 NeoBundleLazy 'elzr/vim-json', {'filetypes' : 'json'}
 NeoBundleLazy 'vim-scripts/po.vim--gray', {'autoload': {'filetypes': ['po']}}
@@ -178,16 +178,16 @@ NeoBundleLazy 'joedicastro/vim-pentadactyl', {
             \ 'autoload': {'filetypes': ['pentadactyl']}}
 NeoBundle 'scrooloose/syntastic'
 
-" }}}
+" 
 
-" Open external links {{{
+" Open external links 
 
 " Open a url into the browser or another files with an external app
 NeoBundle 'vim-scripts/utl.vim'
 
-" }}}
+" 
 
-" Text edition {{{
+" Text edition 
 
 " Autocompletion of (, [, {, ', ", ...
 NeoBundle 'delimitMate.vim'
@@ -221,9 +221,11 @@ NeoBundle 'kana/vim-textobj-line' " al, il
 NeoBundle 'kana/vim-textobj-underscore' " a_, i_
 NeoBundle 'kana/vim-textobj-user'
 
-" }}}
+" fast select region ,key map <s--> , <s-=>, e ,b 
+NeoBundle 'terryma/vim-expand-region'
+" 
 
-" HTML/CSS {{{
+" HTML/CSS 
 
 " A smart and powerful Color Management tool. Needs to be loaded to be able
 " to use the mappings
@@ -249,9 +251,9 @@ NeoBundle 'kchmck/vim-coffee-script',{'autoload' : {
             \ 'filetypes' : ['coffee']
             \ }}
 
-" }}}
+" 
 
-" GUI {{{
+" GUI 
 
 " A better looking status line
 NeoBundle 'bling/vim-airline'
@@ -261,32 +263,39 @@ NeoBundleLazy 'vim-scripts/zoomwintab.vim', {'autoload' :
 " easily window resizing
 NeoBundle 'jimsei/winresizer'
 
-" }}}
+" 
 
-" Tmux {{{
+" Tmux 
 
 " Easily interacts with Tmux from Vim
 NeoBundle 'benmills/vimux'
 " Tmux config file syntax
 NeoBundleLazy 'vimez/vim-tmux', { 'autoload' : { 'filetypes' : 'conf'}}
 
-" }}}
+" 
+"
+" Conque
+" windows can execute shell
+NeoBundle 'musicx/conque'
 
-" API Web {{{
+autocmd filetype conque-term let g:airline_section_warning = '' 
+
+
+" API Web 
 
 NeoBundle 'mattn/webapi-vim'
 
-" }}}
+" 
 
-" DBMS {{{
+" DBMS 
 
 NeoBundleLazy 'joedicastro/dbext.vim', { 'autoload' : { 'filetypes' : 'sql'}}
 
-" }}}
+" 
 
-" END BUNDLES }}}
+" END BUNDLES 
 
-" Auto install the plugins {{{
+" Auto install the plugins 
 
 " First-time plugins installation
 if iCanHazNeoBundle == 0
@@ -299,22 +308,22 @@ endif
 " want to install them (useful to add plugins in the .vimrc)
 NeoBundleCheck
 
-" }}}
+" 
 
 filetype plugin indent on      " Indent and plugins by filetype
 
-" END NEOBUNDLE }}}
+" END NEOBUNDLE 
 
-" VIM Setup {{{ ===============================================================
+" VIM Setup  ===============================================================
 
-" <Leader> & <LocalLeader> mapping {{{
+" <Leader> & <LocalLeader> mapping 
 
 let mapleader=','
 let maplocalleader= ' '
 
-" }}}
+" 
 
-" Basic options {{{
+" Basic options 
 
 scriptencoding utf-8
 set encoding=utf-8              " setup the encoding to UTF-8
@@ -339,9 +348,9 @@ set ttimeoutlen=0               " toggle between modes almost instantly
 set backspace=indent,eol,start  " defines the backspace key behavior
 set virtualedit=all             " to edit where there is no actual character
 
-" }}}
+" 
 
-" Searching {{{
+" Searching 
 
 set incsearch                   " incremental searching
 set showmatch                   " show pairs match
@@ -349,17 +358,17 @@ set hlsearch                    " highlight search results
 set smartcase                   " smart case ignore
 set ignorecase                  " ignore case letters
 
-" }}}
+" 
 
-" History and permanent undo levels {{{
+" History and permanent undo levels 
 
 set history=1000
 "set undofile
 "set undoreload=1000
 
-" }}}
+" 
 
-" Make a dir if no exists {{{
+" Make a dir if no exists 
 
 function! MakeDirIfNoExists(path)
     if !isdirectory(expand(a:path))
@@ -367,9 +376,9 @@ function! MakeDirIfNoExists(path)
     endif
 endfunction
 
-" }}}
+" 
 
-" Backups {{{
+" Backups 
 
 set backup
 set noswapfile
@@ -383,9 +392,9 @@ silent! call MakeDirIfNoExists(&undodir)
 silent! call MakeDirIfNoExists(&backupdir)
 silent! call MakeDirIfNoExists(&directory)
 
-" }}}
+" 
 
-" Wildmenu {{{
+" Wildmenu 
 
 set wildmenu                        " Command line autocompletion
 set wildmode=list:longest,full      " Shows all the options
@@ -397,9 +406,9 @@ set wildignore+=*.jar                            " java archives
 set wildignore+=*.pyc                            " Python byte code
 set wildignore+=*.stats                          " Pylint stats
 
-" }}}
+" 
 
-" Tabs, space and wrapping {{{
+" Tabs, space and wrapping 
 
 set expandtab                  " spaces instead of tabs
 set tabstop=4                  " a tab = four spaces
@@ -437,9 +446,9 @@ endfunction
 
 nmap <silent><Leader>ew :call ToggleWrap()<CR>
 
-" }}}
+" 
 
-" Ok, a vim for men, get off the cursor keys {{{
+" Ok, a vim for men, get off the cursor keys 
 
 " nnoremap <up> <nop>
 " nnoremap <down> <nop>
@@ -450,9 +459,9 @@ nmap <silent><Leader>ew :call ToggleWrap()<CR>
 " inoremap <left> <nop>
 " inoremap <right> <nop>
 
-" }}}
+" 
 
-" Colorscheme {{{
+" Colorscheme 
 
 syntax enable                  " enable the syntax highlight
 set background=dark            " set a dark background
@@ -463,44 +472,58 @@ else
     colorscheme molokai256
 endif
 
-" }}}
+" 
 
-" Font {{{
+" Font 
 
 set guifont=Dejavu\ Sans\ Mono\ for\ Powerline\ 11
 
-" }}}
+" 
 
-" Resize the divisions if the Vim window size changes {{{
+" Resize the divisions if the Vim window size changes 
 
 au VimResized * exe "normal! \<c-w>="
 
-" }}}
+" 
 
-" New windows {{{
+" New windows 
 
 nnoremap <Leader>v <C-w>v
 nnoremap <Leader>h <C-w>s
 
-" }}}
+nnoremap <silent> <Leader>vv :ConqueTermSplit bash<CR>
+nnoremap <silent> <Leader>hh :ConqueTermVSplit bash<CR>
+ 
 
-" Fast window moves {{{
+"                                                     
 
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" Fast window moves 
 
-" }}}
+"nnoremap <C-h> <C-w>h
+"nnoremap <C-j> <C-w>j
+"nnoremap <C-k> <C-w>k
+"nnoremap <C-l> <C-w>l
+ 
+nnoremap  <S-h> <C-w><
+nnoremap  <S-j> <C-w>-
+nnoremap  <S-k> <C-w>+
+nnoremap  <S-l> <C-w>>
+ 
+"nnoremap <Ctrl><Left> <C-w><
+"nnoremap <Ctrl><Down> <C-w>-
+"nnoremap <Ctrl><Up> <C-w>+
+"nnoremap <Ctrl><Right> <C-w>>
+ 
+" 
 
-" Fast window & buffer close and kill {{{
+" Fast window & buffer close and kill 
 
 nnoremap <Leader>k <C-w>c
 nnoremap <silent><Leader>K :bd<CR>
 
-" }}}
+" 
 
-" Toggle line numbers {{{
+" Toggle line numbers 
 
 nnoremap <silent><Leader>l :call ToggleRelativeAbsoluteNumber()<CR>
 function! ToggleRelativeAbsoluteNumber()
@@ -519,16 +542,16 @@ function! ToggleRelativeAbsoluteNumber()
   endif
 endfunction
 
-" }}}
+" 
 
-" Show hidden chars {{{
+" Show hidden chars 
 
 nmap <Leader>eh :set list!<CR>
 set listchars=tab:→\ ,eol:↵,trail:·,extends:↷,precedes:↶
 
-" }}}
+" 
 
-" Folding {{{
+" Folding 
 
 set foldmethod=marker
 set nofoldenable
@@ -537,9 +560,9 @@ set nofoldenable
 "nnoremap \ za
 "vnoremap \ za
 
-" }}}
+" 
 
-" Cut/Paste {{{
+" Cut/Paste 
 
 " to/from the clipboard
 map <Leader>y "*y
@@ -548,15 +571,15 @@ map <Leader>p "*p
 " toggle paste mode
 map <Leader>P :set invpaste<CR>
 
-" }}}
+" 
 
-" Autoload configuration when this file changes ($MYVIMRC) {{{
+" Autoload configuration when this file changes ($MYVIMRC) 
 
 autocmd! BufWritePost vimrc source %
 
-" }}}
+" 
 
-" Spelling {{{
+" Spelling 
 
 " turn on the spell checking and set the Spanish language
 nmap <Leader>ss :setlocal spell spelllang=es<CR>
@@ -572,27 +595,27 @@ nmap <Leader>sp z=
 nmap <Leader>sc ]sz=
 " add word to the dictionary
 nmap <Leader>sa zg
-" }}}
+" 
 
-" Save as root {{{
+" Save as root 
 
 cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
 
-" }}}
+" 
 
-" Quick saving {{{
+" Quick saving 
 
 nmap <silent> <Leader>w :update<CR>
 
-" }}}
+" 
 
-" Delete trailing whitespaces {{{
+" Delete trailing whitespaces 
 
 nmap <silent><Leader>et :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-" }}}
+" 
 
-" Use Ranger as a file explorer {{{
+" Use Ranger as a file explorer 
 
 fun! RangerChooser()
     exec "silent !ranger --choosefile=/tmp/chosenfile " . expand("%:p:h")
@@ -603,9 +626,9 @@ fun! RangerChooser()
     redraw!
 endfun
 map <Leader>x :call RangerChooser()<CR>
-" }}}
+" 
 
-" Toggle the Quickfix window {{{
+" Toggle the Quickfix window 
 
 function! s:QuickfixToggle()
     for i in range(1, winnr('$'))
@@ -622,9 +645,9 @@ command! ToggleQuickfix call <SID>QuickfixToggle()
 
 nnoremap <silent> <Leader>q :ToggleQuickfix<CR>
 
-" }}}
+" 
 
-" Text statistics {{{
+" Text statistics 
 
 " get the total of lines, words, chars and bytes (and for the current position)
 map <Leader>es g<C-G>
@@ -646,23 +669,23 @@ endfunction
 command! -range=% WordFrequency <line1>,<line2>call WordFrequency()
 map <Leader>ef :Unite output:WordFrequency<CR>
 
-" }}}
+" 
 
-" Count lines of code {{{
+" Count lines of code 
 
 function! LinesOfCode()
     echo system('cloc --quiet '.bufname("%"))
 endfunction
 
-"}}}
 
-" Toggle the search results highlighting {{{
+
+" Toggle the search results highlighting 
 
 map <silent><Leader>eq :set invhlsearch<CR>
 
-" }}}
+" 
 
-" Move between Vim and Tmux windows {{{
+" Move between Vim and Tmux windows 
 
 if exists('$TMUX')
   function! TmuxOrSplitSwitch(wincmd, tmuxdir)
@@ -689,15 +712,15 @@ else
   map <C-l> <C-w>l
 endif
 
-" }}}
+" 
 
-" Quick exiting without save {{{
+" Quick exiting without save 
 
 nnoremap <Leader>`` :qa!<CR>
 
-" }}}
+" 
 
-" Execution permissions by default to shebang (#!) files {{{
+" Execution permissions by default to shebang (#!) files 
 
 augroup shebang_chmod
   autocmd!
@@ -716,27 +739,27 @@ augroup shebang_chmod
         \ endif
 augroup END
 
-" }}}
+" 
 
-" Load matchit by default {{{
+" Load matchit by default 
 
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
 
-" }}}
+" 
 
-" Make the Y behavior similar to D & C {{{
+" Make the Y behavior similar to D & C 
 
 nnoremap Y y$
 
-" }}}
+" 
 
-" END VIM SETUP }}}
+" END VIM SETUP 
 
-" PLUGINS Setup {{{ ===========================================================
+" PLUGINS Setup  ===========================================================
 
-" Airline {{{
+" Airline 
 
 set noshowmode
 
@@ -750,22 +773,22 @@ let g:airline#extensions#hunks#non_zero_only = 1
 " let g:airline#extensions#tabline#fnamemod = ':t'
 " let g:airline#extensions#tabline#buffer_min_count = 1
 
-" }}}
+" 
 
-" CoffeeScript {{{
+" CoffeeScript 
 
 map <Leader>rw :CoffeeWatch vert<CR>
 
-" }}}
+" 
 
-" ColorV {{{
+" ColorV 
 
 let g:colorv_cache_file=$HOME.'/.vim/tmp/vim_colorv_cache'
 let g:colorv_cache_fav=$HOME.'/.vim/tmp/vim_colorv_cache_fav'
 
-" }}}
+" 
 
-" Commentary {{{ -------------------------------------------------------------
+" Commentary  -------------------------------------------------------------
 
 nmap <Leader>c <Plug>CommentaryLine
 xmap <Leader>c <Plug>Commentary
@@ -777,9 +800,9 @@ augroup plugin_commentary
     au FileType puppet setlocal commentstring=#\ %s
 augroup END
 
-" }}}
+" 
 
-" DBext {{{
+" DBext 
 
 let g:dbext_default_type = 'SQLITE'
 let g:dbext_default_user = ""
@@ -835,21 +858,21 @@ let g:dbext_default_SQLITE_bin = 'sqlite3'
 " let g:dbext_default_SQLITE_cmd_terminator    = ';'
 " let g:dbext_default_SQLITE_extra             = ''
 
-" }}}
+" 
 
-" delimitmate {{{
+" delimitmate 
 
 let delimitMate_expand_space = 1
 
-" }}}
+" 
 
-" easydigraph {{{
+" easydigraph 
 
 let g:EasyDigraph_nmap = '<Leader>dd'
 
-" }}}
+" 
 
-" Fugitive {{{
+" Fugitive 
 
 nnoremap <Leader>gn :Unite output:echo\ system("git\ init")<CR>
 nnoremap <Leader>gs :Gstatus<CR>
@@ -888,9 +911,9 @@ if !exists(":Gdiffoff")
     command Gdiffoff diffoff | q | Gedit
 endif
 noremap <Leader>dq :Gdiffoff<CR>
-" }}}
+" 
 
-" Gitv {{{
+" Gitv 
 
 nnoremap <silent> <leader>gv :Gitv --all<CR>
 nnoremap <silent> <leader>gV :Gitv! --all<CR>
@@ -903,9 +926,9 @@ let g:Gitv_DoNotMapCtrlKey = 1
 
 autocmd FileType git set nofoldenable
 
-" }}}
+" 
 
-" GitHub dashboard {{{
+" GitHub dashboard 
 
 nnoremap <Leader>gD :exe 'GHD! '.input("Username: ")<CR>
 nnoremap <Leader>gA :exe 'GHA! '.input("Username or repository: ")<CR>
@@ -930,26 +953,26 @@ endfunction
 
 autocmd FileType github-dashboard call airline#add_statusline_func('GHDashboard')
 
-" }}}
+" 
 
-" Gundo {{{ ------------------------------------------------------------------
+" Gundo  ------------------------------------------------------------------
 
 nnoremap <Leader>u :GundoToggle<CR>
 
 let g:gundo_preview_bottom = 1
 
-" }}}
+" 
 
-" indentLine {{{
+" indentLine 
 
 map <silent> <Leader>L :IndentLinesToggle<CR>
 let g:indentLine_enabled = 0
 let g:indentLine_char = '┊'
 let g:indentLine_color_term = 239
 
-" }}}
+" 
 
-" Neocomplete {{{
+" Neocomplete 
 
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
@@ -989,21 +1012,21 @@ endif
 " let g:neocomplete#sources#omni#input_patterns.python='[^. \t]\.\w*'
 let g:neocomplete#sources#omni#input_patterns.python='\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
-" }}}
+" 
 
-" Neobundle {{{
+" Neobundle 
 
 let g:neobundle#log_filename = $HOME.'/.vim/tmp/neobundle.log'
 
-" }}}
+" 
 
-" Po.vim {{{ -----------------------------------------------------------------
+" Po.vim  -----------------------------------------------------------------
 
 let g:po_translator = "joe di castro <joe@joedicastro.com>"
 
-" }}}
+" 
 
-" PythonMode {{{ -------------------------------------------------------------
+" PythonMode  -------------------------------------------------------------
 
 nmap <silent><Leader>n :PymodeLint<CR>
 
@@ -1019,9 +1042,9 @@ let g:pymode_rope = 1
 let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 1
 
-" }}}
+" 
 
-" Syntastic {{{
+" Syntastic 
 
 nmap <silent><Leader>N :SyntasticCheck<CR>:Errors<CR>
 
@@ -1035,9 +1058,9 @@ let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol  = '⚡'
 let g:syntastic_style_warning_symbol  = '⚡'
 
-" }}}
+" 
 
-" Unite {{{
+" Unite 
 
 " files
 nnoremap <silent><Leader>o :Unite -silent -start-insert file<CR>
@@ -1067,18 +1090,18 @@ nnoremap <silent><Leader>t :Unite -silent -vertical -winwidth=40
 " junk files
   nnoremap <silent><Leader>d :Unite -silent junkfile/new junkfile<CR>
 
-" menus {{{
+" menus 
 let g:unite_source_menu_menus = {}
 
-" menu prefix key (for all Unite menus) {{{
+" menu prefix key (for all Unite menus) 
 nnoremap [menu] <Nop>
 nmap <LocalLeader> [menu]
-" }}}
+" 
 
 " menus menu
 nnoremap <silent>[menu]u :Unite -silent -winheight=20 menu<CR>
 
-" files and dirs menu {{{
+" files and dirs menu 
 let g:unite_source_menu_menus.files = {
     \ 'description' : '          files & dirs
         \                                          ⌘ [space]o',
@@ -1117,9 +1140,9 @@ let g:unite_source_menu_menus.files.command_candidates = [
     \]
 nnoremap <silent>[menu]o :Unite -silent -winheight=17 -start-insert
             \ menu:files<CR>
-" }}}
+" 
 
-" file searching menu {{{
+" file searching menu 
 let g:unite_source_menu_menus.grep = {
     \ 'description' : '           search files
         \                                          ⌘ [space]a',
@@ -1135,9 +1158,9 @@ let g:unite_source_menu_menus.grep.command_candidates = [
         \'Unite vimgrep'],
     \]
 nnoremap <silent>[menu]a :Unite -silent menu:grep<CR>
-" }}}
+" 
 
-" buffers, tabs & windows menu {{{
+" buffers, tabs & windows menu 
 let g:unite_source_menu_menus.navigation = {
     \ 'description' : '     navigate by buffers, tabs & windows
         \                   ⌘ [space]b',
@@ -1169,9 +1192,9 @@ let g:unite_source_menu_menus.navigation.command_candidates = [
         \'bd'],
     \]
 nnoremap <silent>[menu]b :Unite -silent menu:navigation<CR>
-" }}}
+" 
 
-" buffer internal searching menu {{{
+" buffer internal searching menu 
 let g:unite_source_menu_menus.searching = {
     \ 'description' : '      searchs inside the current buffer
         \                     ⌘ [space]f',
@@ -1197,9 +1220,9 @@ let g:unite_source_menu_menus.searching.command_candidates = [
         \'Unite -toggle grep:%::FIXME|TODO|NOTE|XXX|COMBAK|@todo'],
     \]
 nnoremap <silent>[menu]f :Unite -silent menu:searching<CR>
-" }}}
+" 
 
-" yanks, registers & history menu {{{
+" yanks, registers & history menu 
 let g:unite_source_menu_menus.registers = {
     \ 'description' : '      yanks, registers & history
         \                            ⌘ [space]i',
@@ -1219,9 +1242,9 @@ let g:unite_source_menu_menus.registers.command_candidates = [
         \'GundoToggle'],
     \]
 nnoremap <silent>[menu]i :Unite -silent menu:registers<CR>
-" }}}
+" 
 
-" spelling menu {{{
+" spelling menu 
 let g:unite_source_menu_menus.spelling = {
     \ 'description' : '       spell checking
         \                                        ⌘ [space]s',
@@ -1243,9 +1266,9 @@ let g:unite_source_menu_menus.spelling.command_candidates = [
         \'normal ,sa'],
     \]
 nnoremap <silent>[menu]s :Unite -silent menu:spelling<CR>
-" }}}
+" 
 
-" text edition menu {{{
+" text edition menu 
 let g:unite_source_menu_menus.text = {
     \ 'description' : '           text edition
         \                                          ⌘ [space]e',
@@ -1287,9 +1310,9 @@ let g:unite_source_menu_menus.text.command_candidates = [
         \'normal ga'],
     \]
 nnoremap <silent>[menu]e :Unite -silent -winheight=20 menu:text <CR>
-" }}}
+" 
 
-" neobundle menu {{{
+" neobundle menu 
 let g:unite_source_menu_menus.neobundle = {
     \ 'description' : '      plugins administration with neobundle
         \                 ⌘ [space]n',
@@ -1319,9 +1342,9 @@ let g:unite_source_menu_menus.neobundle.command_candidates = [
         \'NeoBundleExtraEdit'],
     \]
 nnoremap <silent>[menu]n :Unite -silent -start-insert menu:neobundle<CR>
-" }}}
+" 
 
-" git menu {{{
+" git menu 
 let g:unite_source_menu_menus.git = {
     \ 'description' : '            admin git repositories
         \                                ⌘ [space]g',
@@ -1383,9 +1406,9 @@ let g:unite_source_menu_menus.git.command_candidates = [
         \'normal ,gS'],
     \]
 nnoremap <silent>[menu]g :Unite -silent -winheight=29 -start-insert menu:git<CR>
-" }}}
+" 
 
-" code menu {{{
+" code menu 
 let g:unite_source_menu_menus.code = {
     \ 'description' : '           code tools
         \                                            ⌘ [space]p',
@@ -1467,9 +1490,9 @@ let g:unite_source_menu_menus.code.command_candidates = [
         \'IndentLinesToggle'],
     \]
 nnoremap <silent>[menu]p :Unite -silent -winheight=42 menu:code<CR>
-" }}}
+" 
 
-" markdown menu {{{
+" markdown menu 
 let g:unite_source_menu_menus.markdown = {
     \ 'description' : '       preview markdown extra docs
         \                           ⌘ [space]k',
@@ -1481,9 +1504,9 @@ let g:unite_source_menu_menus.markdown.command_candidates = [
         \'Mer'],
     \]
 nnoremap <silent>[menu]k :Unite -silent menu:markdown<CR>
-" }}}
+" 
 
-" bookmarks menu {{{
+" bookmarks menu 
 let g:unite_source_menu_menus.bookmarks = {
     \ 'description' : '      bookmarks
         \                                             ⌘ [space]m',
@@ -1495,9 +1518,9 @@ let g:unite_source_menu_menus.bookmarks.command_candidates = [
         \'UniteBookmarkAdd'],
     \]
 nnoremap <silent>[menu]m :Unite -silent menu:bookmarks<CR>
-" }}}
+" 
 
-" colorv menu {{{
+" colorv menu 
 function! GetColorFormat()
     let formats = {'r' : 'RGB',
                   \'n' : 'NAME',
@@ -1581,9 +1604,9 @@ let g:unite_source_menu_menus.colorv.command_candidates = [
         \" ".input("Color 2 (hex): ")'],
     \]
 nnoremap <silent>[menu]c :Unite -silent menu:colorv<CR>
-" }}}
+" 
 
-" vim menu {{{
+" vim menu 
 let g:unite_source_menu_menus.vim = {
     \ 'description' : '            vim
         \                                                   ⌘ [space]v',
@@ -1615,9 +1638,9 @@ let g:unite_source_menu_menus.vim.command_candidates = [
         \'Unite -start-insert launcher'],
     \]
 nnoremap <silent>[menu]v :Unite menu:vim -silent -start-insert<CR>
-" }}}
+" 
 
-" db menu {{{
+" db menu 
 let g:unite_source_menu_menus.db = {
     \ 'description' : '             database (SQL)
         \                                        ⌘ [space]S',
@@ -1673,9 +1696,9 @@ let g:unite_source_menu_menus.db.command_candidates = [
 
 nnoremap <silent>[menu]S :Unite menu:db -silent -winheight=25 -start-insert<CR>
 
-" }}}
+" 
 
-" }}}
+" 
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
@@ -1711,9 +1734,9 @@ endif
 
 let g:junkfile#directory=expand($HOME."/.vim/tmp/junk")
 
-" }}}
+" 
 
-" Utl {{{
+" Utl 
 
 map <Leader>j :Utl <CR><Bar>:redraw!<CR>
 
@@ -1723,9 +1746,9 @@ let g:utl_cfg_hdl_mt_image_jpeg = 'silent :!sxiv %p &'
 let g:utl_cfg_hdl_mt_image_gif = 'silent :!sxiv %p &'
 let g:utl_cfg_hdl_mt_image_png = 'silent :!sxiv %p &'
 
-" }}}
+" 
 
-" VimFiler {{{
+" VimFiler 
 
 nnoremap <silent><Leader>X :VimFiler<CR>
 
@@ -1743,9 +1766,9 @@ let g:vimfiler_force_overwrite_statusline = 0
 let g:vimfiler_time_format = '%d-%m-%Y %H:%M:%S'
 let g:vimfiler_data_directory = $HOME.'/.vim/tmp/vimfiler'
 
-" }}}
+" 
 
-" Vim-markdown-extra-preview {{{
+" Vim-markdown-extra-preview 
 
 " map <LocalLeader>mp :Me<CR>
 " map <LocalLeader>mr :Mer<CR>
@@ -1753,9 +1776,9 @@ let g:vimfiler_data_directory = $HOME.'/.vim/tmp/vimfiler'
 " let g:VMEPextensions = ['extra', 'codehilite']
 " let g:VMEPhtmlreader= '/usr/bin/chromium'
 
-" }}}
+" 
 
-" vimux {{{
+" vimux 
 
 let g:VimuxUseNearestPane = 1
 
@@ -1770,9 +1793,9 @@ map <Leader>rs :VimuxInterruptRunner<CR>
 map <Leader>ri :VimuxInspectRunner<CR>
 map <Leader>rq :VimuxCloseRunner<CR>
 
-" }}}
+" 
 
-" Vinarise {{{
+" Vinarise 
 
 map <F6> :Vinarise<CR>
 
@@ -1780,84 +1803,84 @@ let g:vinarise_enable_auto_detect = 1
 
 au FileType vinarise let g:airline_section_warning = ''
 
-" }}}
+" 
 
-" Virtualenv {{{
+" Virtualenv 
 
 let g:virtualenv_auto_activate = 1
 let g:virtualenv_stl_format = '(%n)'
 
-" }}}
+" 
 
-" winresizer {{{
+" winresizer 
 
 let g:winresizer_start_key = '<C-C><C-W>'
 " cancelar pulsando ESC
 " let g:winresizer_finish_with_escape = 1
 let g:winresizer_keycode_finish = 27
 
-" }}}
+" 
 
-" zoomwintab {{{
+" zoomwintab 
 
 map <Leader>z :ZoomWinTabToggle<CR>
 
-" }}}
+" 
 
-" END PLUGINS SETUP }}}
+" END PLUGINS SETUP 
 
-" FILETYPES  {{{ ==============================================================
+" FILETYPES   ==============================================================
 
-" DJANGO HTML (Templates) {{{
+" DJANGO HTML (Templates) 
 
 au BufRead,BufNewFile */templates/*.html setlocal filetype=htmldjango.html
 
-" }}}
+" 
 
-" JSON {{{ -------------------------------------------------------------------
+" JSON  -------------------------------------------------------------------
 
 augroup json_autocmd
   autocmd FileType json set foldmethod=syntax
 augroup END
 
-" }}}
+" 
 
-" LUA {{{
+" LUA 
 
 au BufRead,BufNewFile rc.lua setlocal foldmethod=marker
 
-" }}}
+" 
 
-" PYTHON {{{
+" PYTHON 
 
 au FileType python setlocal foldlevel=1000
 
-" }}}
+" 
 
-" MARKDOWN {{{
+" MARKDOWN 
 
 " markdown filetype file
 au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
 autocmd FileType markdown NeoBundleSource vim-markdown
 autocmd FileType markdown NeoBundleSource vim-markdown-extra-preview
 
-" }}}
+" 
 
-" RUBY {{{
+" RUBY 
 
 au FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
-" }}}
+" 
 
-" SQL {{{
+" SQL 
 
 autocmd FileType sql DBCheckModeline
 
-" }}}
+" 
 
-" END FILETYPES }}}
+" END FILETYPES 
 
-" Other Customizations {{{ ====================================================
+" Other Customizations  ====================================================
 
 let s:vimcustomfile = $HOME.'/.vim/custom.vim'
 
@@ -1865,6 +1888,6 @@ if filereadable(s:vimcustomfile)
     exec 'source '.s:vimcustomfile
 endif
 
-" }}}
+" 
 
 " vim:foldmethod=marker
