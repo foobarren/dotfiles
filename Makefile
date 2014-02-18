@@ -4,14 +4,20 @@ vundle=git://github.com/gmarik/vundle.git
 dest=~/.foobarren_dotfiles
 
 all: install
-install: download install-zsh install-vim
+install: download install-zsh install-vim install-pip
 
 vim: download install-vim
 zsh: download install-zsh
+pip: install-pip
 
 download:
 	@rm -rf $(dest)
 	git clone $(master) $(dest)
+
+install-pip:
+	@curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+	sudo python get-pip.py
+    sudo pip install isort
 
 install-zsh:
 	ln -fs $(dest)/zshrc ~/.zshrc
