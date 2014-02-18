@@ -17,7 +17,7 @@ download:
 install-pip:
 	@curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
 	sudo python get-pip.py
-    sudo pip install isort
+    #sudo pip install isort
 
 install-zsh:
 	ln -fs $(dest)/zshrc ~/.zshrc
