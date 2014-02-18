@@ -4,19 +4,19 @@ vundle=git://github.com/gmarik/vundle.git
 dest=~/.foobarren_dotfiles
 
 all: install
-install: download zsh vim
+install: download install-zsh install-vim
 
-vim: download vim
-zsh: download zsh
+vim: download install-vim
+zsh: download install-zsh
 
 download:
 	@rm -rf $(dest)
 	git clone $(master) $(dest)
 
-zsh:
+install-zsh:
 	ln -fs $(dest)/zshrc ~/.zshrc
 
-vim:
+install-vim:
 	ln -fs $(dest)/vimrc ~/.vimrc
 	@rm -rf ~/.vim/bundle/vundle
 	git clone -q $(vundle) ~/.vim/bundle/vundle
