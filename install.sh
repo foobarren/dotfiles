@@ -16,7 +16,7 @@ function install_yum {
 }
 
 function install_pip {
-    test pip
+    pip
     if [ $? -eq 0 ]; then
         echo "pip had installed!"
     else
