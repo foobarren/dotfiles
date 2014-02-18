@@ -201,8 +201,8 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-commentary'
 " smart digraphs insertion
 NeoBundle 'Rykka/easydigraph.vim'
-" browse the vim undo tree ,comment for not support vim7.2
-"NeoBundleLazy 'sjl/gundo.vim', { 'autoload' : {'commands': 'GundoToggle'}}
+" browse the vim undo tree
+NeoBundleLazy 'sjl/gundo.vim', { 'autoload' : {'commands': 'GundoToggle'}}
 " to insert lorem ipsum blocks
 NeoBundleLazy 'vim-scripts/loremipsum', { 'autoload' :
             \ { 'commands' : 'Loremipsum'}}
@@ -258,11 +258,11 @@ NeoBundle 'kchmck/vim-coffee-script',{'autoload' : {
 " A better looking status line
 NeoBundle 'bling/vim-airline'
 " Zooms a window
-NeoBundleLazy 'vim-scripts/zoomwintab.vim', {'autoload' :
-            \{'commands' : 'ZoomWinTabToggle'}}
+"NeoBundleLazy 'vim-scripts/zoomwintab.vim', {'autoload' :
+"            \{'commands' : 'ZoomWinTabToggle'}}
 " easily window resizing
 NeoBundle 'jimsei/winresizer'
-
+ 
 " 
 
 " Tmux 
@@ -444,7 +444,8 @@ function! ToggleWrap()
     endif
 endfunction
 
-nmap <silent><Leader>ew :call ToggleWrap()<CR>
+" no use ,execute maybe error
+"nmap <silent><Leader>ew :call ToggleWrap()<CR>
 
 " 
 
@@ -499,33 +500,29 @@ nnoremap <silent> <Leader>hh :ConqueTermVSplit bash<CR>
 
 " Fast window moves 
 
-"nnoremap <C-h> <C-w>h
-"nnoremap <C-j> <C-w>j
-"nnoremap <C-k> <C-w>k
-"nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
  
-nnoremap  <S-h> <C-w><
-nnoremap  <S-j> <C-w>-
-nnoremap  <S-k> <C-w>+
-nnoremap  <S-l> <C-w>>
+"nnoremap  <S-h> <C-w><
+"nnoremap  <S-j> <C-w>-
+"nnoremap  <S-k> <C-w>+
+"nnoremap  <S-l> <C-w>>
  
-"nnoremap <Ctrl><Left> <C-w><
-"nnoremap <Ctrl><Down> <C-w>-
-"nnoremap <Ctrl><Up> <C-w>+
-"nnoremap <Ctrl><Right> <C-w>>
  
 " 
 
 " Fast window & buffer close and kill 
-
-nnoremap <Leader>k <C-w>c
-nnoremap <silent><Leader>K :bd<CR>
+" no use ,replace by :q or ESC
+"nnoremap <Leader>k <C-w>c
+"nnoremap <silent><Leader>K :bd<CR>
 
 " 
 
 " Toggle line numbers 
-
-nnoremap <silent><Leader>l :call ToggleRelativeAbsoluteNumber()<CR>
+" no use ,execute maybe error
+"nnoremap <silent><Leader>l :call ToggleRelativeAbsoluteNumber()<CR>
 function! ToggleRelativeAbsoluteNumber()
   if !&number && !&relativenumber
       set number
@@ -565,11 +562,11 @@ set nofoldenable
 " Cut/Paste 
 
 " to/from the clipboard
-map <Leader>y "*y
-map <Leader>p "*p
+"map <Leader>y "*y
+"map <Leader>p "*p
 
 " toggle paste mode
-map <Leader>P :set invpaste<CR>
+map <Leader>ep :set invpaste<CR>
 
 " 
 
@@ -580,21 +577,21 @@ autocmd! BufWritePost vimrc source %
 " 
 
 " Spelling 
-
+" no use 
 " turn on the spell checking and set the Spanish language
-nmap <Leader>ss :setlocal spell spelllang=es<CR>
+"nmap <Leader>ss :setlocal spell spelllang=es<CR>
 " turn on the spell checking and set the English language
-nmap <Leader>se :setlocal spell spelllang=en<CR>
+"nmap <Leader>se :setlocal spell spelllang=en<CR>
 " turn off the spell checking
-nmap <Leader>so :setlocal nospell <CR>
+"nmap <Leader>so :setlocal nospell <CR>
 " jump to the next bad spell word
-nmap <Leader>sn ]s
+"nmap <Leader>sn ]s
 " suggest words
-nmap <Leader>sp z=
+"nmap <Leader>sp z=
 " jump to the next bad spell word and suggests a correct one
-nmap <Leader>sc ]sz=
+"nmap <Leader>sc ]sz=
 " add word to the dictionary
-nmap <Leader>sa zg
+"nmap <Leader>sa zg
 " 
 
 " Save as root 
@@ -605,7 +602,7 @@ cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
 
 " Quick saving 
 
-nmap <silent> <Leader>w :update<CR>
+"nmap <silent> <Leader>w :update<CR>
 
 " 
 
@@ -716,7 +713,7 @@ endif
 
 " Quick exiting without save 
 
-nnoremap <Leader>`` :qa!<CR>
+"nnoremap <Leader>`` :qa!<CR>
 
 " 
 
@@ -751,7 +748,7 @@ endif
 
 " Make the Y behavior similar to D & C 
 
-nnoremap Y y$
+"nnoremap Y y$
 
 " 
 
@@ -776,8 +773,8 @@ let g:airline#extensions#hunks#non_zero_only = 1
 " 
 
 " CoffeeScript 
-
-map <Leader>rw :CoffeeWatch vert<CR>
+" now not use coffee
+"map <Leader>rw :CoffeeWatch vert<CR>
 
 " 
 
@@ -789,10 +786,10 @@ let g:colorv_cache_fav=$HOME.'/.vim/tmp/vim_colorv_cache_fav'
 " 
 
 " Commentary  -------------------------------------------------------------
-
-nmap <Leader>c <Plug>CommentaryLine
-xmap <Leader>c <Plug>Commentary
-
+" use default key '\\' more comfortable
+" nmap <Leader>c <Plug>CommentaryLine
+" xmap <Leader>c <Plug>Commentary
+                    
 augroup plugin_commentary
     au!
     au FileType python setlocal commentstring=#%s
@@ -905,12 +902,12 @@ nnoremap <Leader>ggt :exe 'silent Glog -S='.input("Pattern: ").' <Bar>
 nnoremap <Leader>ggc :silent! Ggrep -i<Space>
 
 " for the diffmode
-noremap <Leader>du :diffupdate<CR>
+" noremap <Leader>du :diffupdate<CR>
 
 if !exists(":Gdiffoff")
     command Gdiffoff diffoff | q | Gedit
 endif
-noremap <Leader>dq :Gdiffoff<CR>
+" noremap <Leader>dq :Gdiffoff<CR>
 " 
 
 " Gitv 
@@ -956,19 +953,19 @@ autocmd FileType github-dashboard call airline#add_statusline_func('GHDashboard'
 " 
 
 " Gundo  ------------------------------------------------------------------
-" not support vim7.2
-"nnoremap <Leader>u :GundoToggle<CR>
 
-"let g:gundo_preview_bottom = 1
+" nnoremap <Leader>u :GundoToggle<CR>
+
+let g:gundo_preview_bottom = 1
 
 " 
 
 " indentLine 
-
-map <silent> <Leader>L :IndentLinesToggle<CR>
-let g:indentLine_enabled = 0
-let g:indentLine_char = '┊'
-let g:indentLine_color_term = 239
+" only support vim7.3+
+" map <silent> <Leader>L :IndentLinesToggle<CR>
+" let g:indentLine_enabled = 0
+" let g:indentLine_char = '┊'
+" let g:indentLine_color_term = 239
 
 " 
 
@@ -1028,7 +1025,7 @@ let g:po_translator = "joe di castro <joe@joedicastro.com>"
 
 " PythonMode  -------------------------------------------------------------
 
-nmap <silent><Leader>n :PymodeLint<CR>
+nmap <silent><Leader>pn :PymodeLint<CR>
 
 let g:pymode_breakpoint_bind = '<Leader>B'
 
@@ -1046,7 +1043,7 @@ let g:pymode_rope_complete_on_dot = 1
 
 " Syntastic 
 
-nmap <silent><Leader>N :SyntasticCheck<CR>:Errors<CR>
+nmap <silent><Leader>pN :SyntasticCheck<CR>:Errors<CR>
 
 let g:syntastic_python_pylint_exe = "pylint2"
 let g:syntastic_mode_map = { 'mode': 'active',
@@ -1063,26 +1060,26 @@ let g:syntastic_style_warning_symbol  = '⚡'
 " Unite 
 
 " files
-nnoremap <silent><Leader>o :Unite -silent -start-insert file<CR>
-nnoremap <silent><Leader>O :Unite -silent -start-insert file_rec/async<CR>
+nnoremap <silent><Leader>uo :Unite -silent -start-insert file<CR>
+nnoremap <silent><Leader>uO :Unite -silent -start-insert file_rec/async<CR>
 nnoremap <silent><Leader>m :Unite -silent file_mru<CR>
 " buffers
-nnoremap <silent><Leader>b :Unite -silent buffer<CR>
+nnoremap <silent><Leader>ub :Unite -silent buffer<CR>
 " tabs
-nnoremap <silent><Leader>B :Unite -silent tab<CR>
+nnoremap <silent><Leader>uB :Unite -silent tab<CR>
 " buffer search
-nnoremap <silent><Leader>f :Unite -silent -no-split -start-insert -auto-preview
+nnoremap <silent><Leader>uf :Unite -silent -no-split -start-insert -auto-preview
             \ line<CR>
 nnoremap <silent>[menu]8 :UniteWithCursorWord -silent -no-split -auto-preview
             \ line<CR>
 " yankring
-nnoremap <silent><Leader>i :Unite -silent history/yank<CR>
+nnoremap <silent><Leader>ui :Unite -silent history/yank<CR>
 " grep
-nnoremap <silent><Leader>a :Unite -silent -no-quit grep<CR>
+nnoremap <silent><Leader>ua :Unite -silent -no-quit grep<CR>
 " help
 nnoremap <silent> g<C-h> :UniteWithCursorWord -silent help<CR>
 " tasks
-nnoremap <silent><Leader>; :Unite -silent -toggle
+nnoremap <silent><Leader>u; :Unite -silent -toggle
             \ grep:%::FIXME\|TODO\|NOTE\|XXX\|COMBAK\|@todo<CR>
 " outlines (also ctags)
 nnoremap <silent><Leader>t :Unite -silent -vertical -winwidth=40
@@ -1184,8 +1181,6 @@ let g:unite_source_menu_menus.navigation.command_candidates = [
         \'close'],
     \['▷ toggle quickfix window                                     ⌘ ,q',
         \'normal ,q'],
-    \['▷ zoom                                                       ⌘ ,z',
-        \'ZoomWinTabToggle'],
     \['▷ delete buffer                                              ⌘ ,K',
         \'bd'],
     \]
@@ -1236,7 +1231,7 @@ let g:unite_source_menu_menus.registers.command_candidates = [
         \'Unite register'],
     \['▷ messages',
         \'Unite output:messages'],
-    \['▷ undo tree ,only vim7.3+ (gundo)                                     ⌘ ,u',
+    \['▷ undo tree      (gundo)                                     ⌘ ,u',
         \'GundoToggle'],
     \]
 nnoremap <silent>[menu]i :Unite -silent menu:registers<CR>
@@ -1263,7 +1258,7 @@ let g:unite_source_menu_menus.spelling.command_candidates = [
     \['▷ add word to dictionary                                     ⌘ ,sa',
         \'normal ,sa'],
     \]
-nnoremap <silent>[menu]s :Unite -silent menu:spelling<CR>
+" nnoremap <silent>[menu]s :Unite -silent menu:spelling<CR>
 " 
 
 " text edition menu 
@@ -1780,16 +1775,16 @@ let g:vimfiler_data_directory = $HOME.'/.vim/tmp/vimfiler'
 
 let g:VimuxUseNearestPane = 1
 
-map <Leader>rr :call VimuxRunCommand('clear;cd '.expand("%:p:h") .' ;python2 '.bufname("%"))<CR>
-map <Leader>r3 :call VimuxRunCommand('clear;cd '.expand("%:p:h") .' ;python3 '.bufname("%"))<CR>
-map <Leader>rt :call VimuxRunCommand('clear;cd '.expand("%:p:h") .' ;time python2 '.bufname("%"))<CR>
-map <Leader>rp :call VimuxRunCommand('clear;cd '.expand("%:p:h") .' ;time pypy '.bufname("%"))<CR>
+" map <Leader>rr :call VimuxRunCommand('clear;cd '.expand("%:p:h") .' ;python2 '.bufname("%"))<CR>
+" map <Leader>r3 :call VimuxRunCommand('clear;cd '.expand("%:p:h") .' ;python3 '.bufname("%"))<CR>
+" map <Leader>rt :call VimuxRunCommand('clear;cd '.expand("%:p:h") .' ;time python2 '.bufname("%"))<CR>
+" map <Leader>rp :call VimuxRunCommand('clear;cd '.expand("%:p:h") .' ;time pypy '.bufname("%"))<CR>
 
-map <Leader>rc :VimuxPromptCommand<CR>
-map <Leader>rl :VimuxRunLastCommand<CR>
-map <Leader>rs :VimuxInterruptRunner<CR>
-map <Leader>ri :VimuxInspectRunner<CR>
-map <Leader>rq :VimuxCloseRunner<CR>
+" map <Leader>rc :VimuxPromptCommand<CR>
+" map <Leader>rl :VimuxRunLastCommand<CR>
+" map <Leader>rs :VimuxInterruptRunner<CR>
+" map <Leader>ri :VimuxInspectRunner<CR>
+" map <Leader>rq :VimuxCloseRunner<CR>
 
 " 
 
@@ -1821,7 +1816,7 @@ let g:winresizer_keycode_finish = 27
 
 " zoomwintab 
 
-map <Leader>z :ZoomWinTabToggle<CR>
+" map <Leader>z :ZoomWinTabToggle<CR>
 
 " 
 
