@@ -20,5 +20,5 @@ vim:
 	ln -fs $(dest)/vimrc ~/.vimrc
 	@rm -rf ~/.vim/bundle/vundle
 	git clone -q $(vundle) ~/.vim/bundle/vundle
-	@vim +BundleInstall +qall
+	@vim +NeoBundleInstall +qall
 	@mkdir -p ~/.vim/undo
