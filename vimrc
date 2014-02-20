@@ -50,13 +50,13 @@ NeoBundle 'Shougo/neobundle.vim'
 
 " Vimproc to asynchronously run commands (NeoBundle, Unite)
 NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \     'windows' : 'make -f make_mingw32.mak',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
+            \ 'build' : {
+            \     'windows' : 'make -f make_mingw32.mak',
+            \     'cygwin' : 'make -f make_cygwin.mak',
+            \     'mac' : 'make -f make_mac.mak',
+            \     'unix' : 'make -f make_unix.mak',
+            \    },
+            \ }
 
 " Unite. The interface to rule almost everything
 NeoBundle 'Shougo/unite.vim'
@@ -96,20 +96,20 @@ NeoBundle 'joedicastro/vim-molokai256'
 
 NeoBundle 'tomasr/molokai'
 NeoBundleLazy 'sjl/badwolf', { 'autoload' :
-        \ { 'unite_sources' : 'colorscheme', }}
+            \ { 'unite_sources' : 'colorscheme', }}
 NeoBundleLazy 'nielsmadan/harlequin', { 'autoload' :
-        \ { 'unite_sources' : 'colorscheme', }}
+            \ { 'unite_sources' : 'colorscheme', }}
 
 
 " Light themes
 NeoBundleLazy 'vim-scripts/summerfruit256.vim', { 'autoload' :
-        \ { 'unite_sources' : 'colorscheme', }}
+            \ { 'unite_sources' : 'colorscheme', }}
 NeoBundleLazy 'joedicastro/vim-github256', { 'autoload' :
-        \ { 'unite_sources' : 'colorscheme', }}
+            \ { 'unite_sources' : 'colorscheme', }}
 
 " Make terminal themes from GUI themes
 NeoBundleLazy 'godlygeek/csapprox', { 'autoload' :
-        \ { 'commands' : ['CSApprox', 'CSApproxSnapshot']}}
+            \ { 'commands' : ['CSApprox', 'CSApproxSnapshot']}}
 
 " 
 
@@ -202,7 +202,7 @@ NeoBundle 'tpope/vim-commentary'
 " smart digraphs insertion
 NeoBundle 'Rykka/easydigraph.vim'
 " browse the vim undo tree
-NeoBundleLazy 'sjl/gundo.vim', { 'autoload' : {'commands': 'GundoToggle'}}
+" NeoBundleLazy 'sjl/gundo.vim', { 'autoload' : {'commands': 'GundoToggle'}}
 " to insert lorem ipsum blocks
 NeoBundleLazy 'vim-scripts/loremipsum', { 'autoload' :
             \ { 'commands' : 'Loremipsum'}}
@@ -231,11 +231,11 @@ NeoBundle 'terryma/vim-expand-region'
 " to use the mappings
 NeoBundleLazy 'Rykka/colorv.vim', {'autoload' : {
             \ 'commands' : [
-                             \ 'ColorV', 'ColorVView', 'ColorVPreview',
-                             \ 'ColorVPicker', 'ColorVEdit', 'ColorVEditAll',
-                             \ 'ColorVInsert', 'ColorVList', 'ColorVName',
-                             \ 'ColorVScheme', 'ColorVSchemeFav',
-                             \ 'ColorVSchemeNew', 'ColorVTurn2'],
+            \ 'ColorV', 'ColorVView', 'ColorVPreview',
+            \ 'ColorVPicker', 'ColorVEdit', 'ColorVEditAll',
+            \ 'ColorVInsert', 'ColorVList', 'ColorVName',
+            \ 'ColorVScheme', 'ColorVSchemeFav',
+            \ 'ColorVSchemeNew', 'ColorVTurn2'],
             \ }}
 
 NeoBundleLazy 'othree/html5.vim', {'autoload':
@@ -246,8 +246,8 @@ NeoBundleLazy 'mattn/emmet-vim', {'autoload':
 
 NeoBundle 'kchmck/vim-coffee-script',{'autoload' : {
             \ 'commands' : [
-                             \ 'CoffeeCompile', 'CoffeeLint', 'CoffeeMake',
-                             \ 'CoffeeRun', 'CoffeeWatch'],
+            \ 'CoffeeCompile', 'CoffeeLint', 'CoffeeMake',
+            \ 'CoffeeRun', 'CoffeeWatch'],
             \ 'filetypes' : ['coffee']
             \ }}
 
@@ -262,7 +262,7 @@ NeoBundle 'bling/vim-airline'
 "            \{'commands' : 'ZoomWinTabToggle'}}
 " easily window resizing
 NeoBundle 'jimsei/winresizer'
- 
+
 " 
 
 " Tmux 
@@ -494,7 +494,7 @@ nnoremap <Leader>h <C-w>s
 
 nnoremap <silent> <Leader>vv :ConqueTermSplit bash<CR>
 nnoremap <silent> <Leader>hh :ConqueTermVSplit bash<CR>
- 
+
 
 "                                                     
 
@@ -504,13 +504,13 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
- 
+
 "nnoremap  <S-h> <C-w><
 "nnoremap  <S-j> <C-w>-
 "nnoremap  <S-k> <C-w>+
 "nnoremap  <S-l> <C-w>>
- 
- 
+
+
 " 
 
 " Fast window & buffer close and kill 
@@ -524,19 +524,19 @@ nnoremap <C-l> <C-w>l
 " no use ,execute maybe error
 "nnoremap <silent><Leader>l :call ToggleRelativeAbsoluteNumber()<CR>
 function! ToggleRelativeAbsoluteNumber()
-  if !&number && !&relativenumber
-      set number
-      set norelativenumber
-  elseif &number && !&relativenumber
-      set nonumber
-      set relativenumber
-  elseif !&number && &relativenumber
-      set number
-      set relativenumber
-  elseif &number && &relativenumber
-      set nonumber
-      set norelativenumber
-  endif
+    if !&number && !&relativenumber
+        set number
+        set norelativenumber
+    elseif &number && !&relativenumber
+        set nonumber
+        set relativenumber
+    elseif !&number && &relativenumber
+        set number
+        set relativenumber
+    elseif &number && &relativenumber
+        set nonumber
+        set norelativenumber
+    endif
 endfunction
 
 " 
@@ -651,17 +651,17 @@ map <Leader>es g<C-G>
 
 " get the word frequency in the text
 function! WordFrequency() range
-  let all = split(join(getline(a:firstline, a:lastline)), '\A\+')
-  let frequencies = {}
-  for word in all
-    let frequencies[word] = get(frequencies, word, 0) + 1
-  endfor
-  let lst = []
-  for [key,value] in items(frequencies)
-    call add(lst, value."\t".key."\n")
-  endfor
-  call sort(lst)
-  echo join(lst)
+    let all = split(join(getline(a:firstline, a:lastline)), '\A\+')
+    let frequencies = {}
+    for word in all
+        let frequencies[word] = get(frequencies, word, 0) + 1
+    endfor
+    let lst = []
+    for [key,value] in items(frequencies)
+        call add(lst, value."\t".key."\n")
+    endfor
+    call sort(lst)
+    echo join(lst)
 endfunction
 command! -range=% WordFrequency <line1>,<line2>call WordFrequency()
 map <Leader>ef :Unite output:WordFrequency<CR>
@@ -685,28 +685,28 @@ map <silent><Leader>eq :set invhlsearch<CR>
 " Move between Vim and Tmux windows 
 
 if exists('$TMUX')
-  function! TmuxOrSplitSwitch(wincmd, tmuxdir)
-    let previous_winnr = winnr()
-    execute "wincmd " . a:wincmd
-    if previous_winnr == winnr()
-      " The sleep and & gives time to get back to vim so tmux's focus tracking
-      " can kick in and send us our ^[[O
-      execute "silent !sh -c 'sleep 0.01; tmux select-pane -" . a:tmuxdir . "' &"
-      redraw!
-    endif
-  endfunction
-  let previous_title = substitute(system("tmux display-message -p '#{pane_title}'"), '\n', '', '')
-  let &t_ti = "\<Esc>]2;vim\<Esc>\\" . &t_ti
-  let &t_te = "\<Esc>]2;". previous_title . "\<Esc>\\" . &t_te
-  nnoremap <silent> <C-h> :call TmuxOrSplitSwitch('h', 'L')<CR>
-  nnoremap <silent> <C-j> :call TmuxOrSplitSwitch('j', 'D')<CR>
-  nnoremap <silent> <C-k> :call TmuxOrSplitSwitch('k', 'U')<CR>
-  nnoremap <silent> <C-l> :call TmuxOrSplitSwitch('l', 'R')<CR>
+    function! TmuxOrSplitSwitch(wincmd, tmuxdir)
+        let previous_winnr = winnr()
+        execute "wincmd " . a:wincmd
+        if previous_winnr == winnr()
+            " The sleep and & gives time to get back to vim so tmux's focus tracking
+            " can kick in and send us our ^[[O
+            execute "silent !sh -c 'sleep 0.01; tmux select-pane -" . a:tmuxdir . "' &"
+            redraw!
+        endif
+    endfunction
+    let previous_title = substitute(system("tmux display-message -p '#{pane_title}'"), '\n', '', '')
+    let &t_ti = "\<Esc>]2;vim\<Esc>\\" . &t_ti
+    let &t_te = "\<Esc>]2;". previous_title . "\<Esc>\\" . &t_te
+    nnoremap <silent> <C-h> :call TmuxOrSplitSwitch('h', 'L')<CR>
+    nnoremap <silent> <C-j> :call TmuxOrSplitSwitch('j', 'D')<CR>
+    nnoremap <silent> <C-k> :call TmuxOrSplitSwitch('k', 'U')<CR>
+    nnoremap <silent> <C-l> :call TmuxOrSplitSwitch('l', 'R')<CR>
 else
-  map <C-h> <C-w>h
-  map <C-j> <C-w>j
-  map <C-k> <C-w>k
-  map <C-l> <C-w>l
+    map <C-h> <C-w>h
+    map <C-j> <C-w>j
+    map <C-k> <C-w>k
+    map <C-l> <C-w>l
 endif
 
 " 
@@ -720,20 +720,20 @@ endif
 " Execution permissions by default to shebang (#!) files 
 
 augroup shebang_chmod
-  autocmd!
-  autocmd BufNewFile  * let b:brand_new_file = 1
-  autocmd BufWritePost * unlet! b:brand_new_file
-  autocmd BufWritePre *
-        \ if exists('b:brand_new_file') |
-        \   if getline(1) =~ '^#!' |
-        \     let b:chmod_post = '+x' |
-        \   endif |
-        \ endif
-  autocmd BufWritePost,FileWritePost *
-        \ if exists('b:chmod_post') && executable('chmod') |
-        \   silent! execute '!chmod '.b:chmod_post.' "<afile>"' |
-        \   unlet b:chmod_post |
-        \ endif
+    autocmd!
+    autocmd BufNewFile  * let b:brand_new_file = 1
+    autocmd BufWritePost * unlet! b:brand_new_file
+    autocmd BufWritePre *
+                \ if exists('b:brand_new_file') |
+                \   if getline(1) =~ '^#!' |
+                \     let b:chmod_post = '+x' |
+                \   endif |
+                \ endif
+    autocmd BufWritePost,FileWritePost *
+                \ if exists('b:chmod_post') && executable('chmod') |
+                \   silent! execute '!chmod '.b:chmod_post.' "<afile>"' |
+                \   unlet b:chmod_post |
+                \ endif
 augroup END
 
 " 
@@ -741,7 +741,7 @@ augroup END
 " Load matchit by default 
 
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-  runtime! macros/matchit.vim
+    runtime! macros/matchit.vim
 endif
 
 " 
@@ -789,7 +789,7 @@ let g:colorv_cache_fav=$HOME.'/.vim/tmp/vim_colorv_cache_fav'
 " use default key '\\' more comfortable
 " nmap <Leader>c <Plug>CommentaryLine
 " xmap <Leader>c <Plug>Commentary
-                    
+
 augroup plugin_commentary
     au!
     au FileType python setlocal commentstring=#%s
@@ -931,21 +931,21 @@ nnoremap <Leader>gD :exe 'GHD! '.input("Username: ")<CR>
 nnoremap <Leader>gA :exe 'GHA! '.input("Username or repository: ")<CR>
 
 function! GHDashboard (...)
-  if &filetype == 'github-dashboard'
-    " first variable is the statusline builder
-    let builder = a:1
+    if &filetype == 'github-dashboard'
+        " first variable is the statusline builder
+        let builder = a:1
 
-    call builder.add_section('airline_a', 'GitHub ')
-    call builder.add_section('airline_b',
-                \ ' %{get(split(get(split(github_dashboard#statusline(), " "),
-                \ 1, ""), ":"), 0, "")} ')
-    call builder.add_section('airline_c',
-                \ ' %{get(split(get(split(github_dashboard#statusline(), " "),
-                \ 2, ""), "]"), 0, "")} ')
+        call builder.add_section('airline_a', 'GitHub ')
+        call builder.add_section('airline_b',
+                    \ ' %{get(split(get(split(github_dashboard#statusline(), " "),
+                    \ 1, ""), ":"), 0, "")} ')
+        call builder.add_section('airline_c',
+                    \ ' %{get(split(get(split(github_dashboard#statusline(), " "),
+                    \ 2, ""), "]"), 0, "")} ')
 
-    " tell the core to use the contents of the builder
-    return 1
-  endif
+        " tell the core to use the contents of the builder
+        return 1
+    endif
 endfunction
 
 autocmd FileType github-dashboard call airline#add_statusline_func('GHDashboard')
@@ -982,17 +982,17 @@ let g:neocomplete#data_directory = $HOME.'/.vim/tmp/neocomplete'
 " disable the auto select feature by default to speed up writing without
 " obstacles (is optimal for certain situations)
 let g:neocomplete#enable_auto_select = 0
-                                        
+
 " toggle the auto select feature
 nnoremap <silent><Leader>ea :call ToggleNeoCompleteAutoSelect()<CR>
 function! ToggleNeoCompleteAutoSelect()
-  if !g:neocomplete#enable_auto_select
-      let g:neocomplete#enable_auto_select = 1
-  else
-      let g:neocomplete#enable_auto_select = 0
-  endif
+    if !g:neocomplete#enable_auto_select
+        let g:neocomplete#enable_auto_select = 1
+    else
+        let g:neocomplete#enable_auto_select = 0
+    endif
 endfunction
-   
+
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -1060,32 +1060,32 @@ let g:syntastic_style_warning_symbol  = '⚡'
 " Unite 
 
 " files
-nnoremap <silent><Leader>uo :Unite -silent -start-insert file<CR>
-nnoremap <silent><Leader>uO :Unite -silent -start-insert file_rec/async<CR>
-nnoremap <silent><Leader>m :Unite -silent file_mru<CR>
+nnoremap <silent><Leader>f :Unite -silent -start-insert file<CR>
+nnoremap <silent><Leader>fr :Unite -silent -start-insert file_rec/async<CR>
+nnoremap <silent><Leader>fm :Unite -silent file_mru<CR>
 " buffers
-nnoremap <silent><Leader>ub :Unite -silent buffer<CR>
+nnoremap <silent><Leader>fb :Unite -silent buffer<CR>
 " tabs
-nnoremap <silent><Leader>uB :Unite -silent tab<CR>
+nnoremap <silent><Leader>ft :Unite -silent tab<CR>
 " buffer search
-nnoremap <silent><Leader>uf :Unite -silent -no-split -start-insert -auto-preview
+nnoremap <silent><Leader>ff :Unite -silent -no-split -start-insert -auto-preview
             \ line<CR>
 nnoremap <silent>[menu]8 :UniteWithCursorWord -silent -no-split -auto-preview
             \ line<CR>
 " yankring
-nnoremap <silent><Leader>ui :Unite -silent history/yank<CR>
+nnoremap <silent><Leader>fy :Unite -silent history/yank<CR>
 " grep
-nnoremap <silent><Leader>ua :Unite -silent -no-quit grep<CR>
+nnoremap <silent><Leader>fg :Unite -silent -no-quit grep<CR>
 " help
 nnoremap <silent> g<C-h> :UniteWithCursorWord -silent help<CR>
 " tasks
-nnoremap <silent><Leader>u; :Unite -silent -toggle
+nnoremap <silent><Leader>f; :Unite -silent -toggle
             \ grep:%::FIXME\|TODO\|NOTE\|XXX\|COMBAK\|@todo<CR>
 " outlines (also ctags)
 nnoremap <silent><Leader>t :Unite -silent -vertical -winwidth=40
             \ -direction=topleft -toggle outline<CR>
 " junk files
-  nnoremap <silent><Leader>d :Unite -silent junkfile/new junkfile<CR>
+nnoremap <silent><Leader>fl :Unite -silent junkfile/new junkfile<CR>
 
 " menus 
 let g:unite_source_menu_menus = {}
@@ -1100,432 +1100,432 @@ nnoremap <silent>[menu]u :Unite -silent -winheight=20 menu<CR>
 
 " files and dirs menu 
 let g:unite_source_menu_menus.files = {
-    \ 'description' : '          files & dirs
-        \                                          ⌘ [space]o',
-    \}
+            \ 'description' : '          files & dirs
+            \                                          ⌘ [space]o',
+            \}
 let g:unite_source_menu_menus.files.command_candidates = [
-    \['▷ open file                                                  ⌘ ,o',
-        \'Unite -start-insert file'],
-    \['▷ open more recently used files                              ⌘ ,m',
-        \'Unite file_mru'],
-    \['▷ open file with recursive search                            ⌘ ,O',
-        \'Unite -start-insert file_rec/async'],
-    \['▷ edit new file',
-        \'Unite file/new'],
-    \['▷ search directory',
-        \'Unite directory'],
-    \['▷ search recently used directories',
-        \'Unite directory_mru'],
-    \['▷ search directory with recursive search',
-        \'Unite directory_rec/async'],
-    \['▷ make new directory',
-        \'Unite directory/new'],
-    \['▷ change working directory',
-        \'Unite -default-action=lcd directory'],
-    \['▷ know current working directory',
-        \'Unite output:pwd'],
-    \['▷ junk files                                                 ⌘ ,d',
-        \'Unite junkfile/new junkfile'],
-    \['▷ save as root                                               ⌘ :w!!',
-        \'exe "write !sudo tee % >/dev/null"'],
-    \['▷ quick save                                                 ⌘ ,w',
-        \'normal ,w'],
-    \['▷ open vimfiler                                              ⌘ ,x',
-        \'VimFiler'],
-    \]
+            \['▷ open file                                                  ⌘ ,o',
+            \'Unite -start-insert file'],
+            \['▷ open more recently used files                              ⌘ ,m',
+            \'Unite file_mru'],
+            \['▷ open file with recursive search                            ⌘ ,O',
+            \'Unite -start-insert file_rec/async'],
+            \['▷ edit new file',
+            \'Unite file/new'],
+            \['▷ search directory',
+            \'Unite directory'],
+            \['▷ search recently used directories',
+            \'Unite directory_mru'],
+            \['▷ search directory with recursive search',
+            \'Unite directory_rec/async'],
+            \['▷ make new directory',
+            \'Unite directory/new'],
+            \['▷ change working directory',
+            \'Unite -default-action=lcd directory'],
+            \['▷ know current working directory',
+            \'Unite output:pwd'],
+            \['▷ junk files                                                 ⌘ ,d',
+            \'Unite junkfile/new junkfile'],
+            \['▷ save as root                                               ⌘ :w!!',
+            \'exe "write !sudo tee % >/dev/null"'],
+            \['▷ quick save                                                 ⌘ ,w',
+            \'normal ,w'],
+            \['▷ open vimfiler                                              ⌘ ,x',
+            \'VimFiler'],
+            \]
 nnoremap <silent>[menu]o :Unite -silent -winheight=17 -start-insert
             \ menu:files<CR>
 " 
 
 " file searching menu 
 let g:unite_source_menu_menus.grep = {
-    \ 'description' : '           search files
-        \                                          ⌘ [space]a',
-    \}
+            \ 'description' : '           search files
+            \                                          ⌘ [space]a',
+            \}
 let g:unite_source_menu_menus.grep.command_candidates = [
-    \['▷ grep (ag → ack → grep)                                     ⌘ ,a',
-        \'Unite -no-quit grep'],
-    \['▷ find',
-        \'Unite find'],
-    \['▷ locate',
-        \'Unite -start-insert locate'],
-    \['▷ vimgrep (very slow)',
-        \'Unite vimgrep'],
-    \]
+            \['▷ grep (ag → ack → grep)                                     ⌘ ,a',
+            \'Unite -no-quit grep'],
+            \['▷ find',
+            \'Unite find'],
+            \['▷ locate',
+            \'Unite -start-insert locate'],
+            \['▷ vimgrep (very slow)',
+            \'Unite vimgrep'],
+            \]
 nnoremap <silent>[menu]a :Unite -silent menu:grep<CR>
 " 
 
 " buffers, tabs & windows menu 
 let g:unite_source_menu_menus.navigation = {
-    \ 'description' : '     navigate by buffers, tabs & windows
-        \                   ⌘ [space]b',
-    \}
+            \ 'description' : '     navigate by buffers, tabs & windows
+            \                   ⌘ [space]b',
+            \}
 let g:unite_source_menu_menus.navigation.command_candidates = [
-    \['▷ buffers                                                    ⌘ ,b',
-        \'Unite buffer'],
-    \['▷ tabs                                                       ⌘ ,B',
-        \'Unite tab'],
-    \['▷ windows',
-        \'Unite window'],
-    \['▷ location list',
-        \'Unite location_list'],
-    \['▷ quickfix',
-        \'Unite quickfix'],
-    \['▷ resize windows                                             ⌘ C-C C-W',
-        \'WinResizerStartResize'],
-    \['▷ new vertical window                                        ⌘ ,v',
-        \'vsplit'],
-    \['▷ new horizontal window                                      ⌘ ,h',
-        \'split'],
-    \['▷ close current window                                       ⌘ ,k',
-        \'close'],
-    \['▷ toggle quickfix window                                     ⌘ ,q',
-        \'normal ,q'],
-    \['▷ delete buffer                                              ⌘ ,K',
-        \'bd'],
-    \]
+            \['▷ buffers                                                    ⌘ ,b',
+            \'Unite buffer'],
+            \['▷ tabs                                                       ⌘ ,B',
+            \'Unite tab'],
+            \['▷ windows',
+            \'Unite window'],
+            \['▷ location list',
+            \'Unite location_list'],
+            \['▷ quickfix',
+            \'Unite quickfix'],
+            \['▷ resize windows                                             ⌘ C-C C-W',
+            \'WinResizerStartResize'],
+            \['▷ new vertical window                                        ⌘ ,v',
+            \'vsplit'],
+            \['▷ new horizontal window                                      ⌘ ,h',
+            \'split'],
+            \['▷ close current window                                       ⌘ ,k',
+            \'close'],
+            \['▷ toggle quickfix window                                     ⌘ ,q',
+            \'normal ,q'],
+            \['▷ delete buffer                                              ⌘ ,K',
+            \'bd'],
+            \]
 nnoremap <silent>[menu]b :Unite -silent menu:navigation<CR>
 " 
 
 " buffer internal searching menu 
 let g:unite_source_menu_menus.searching = {
-    \ 'description' : '      searchs inside the current buffer
-        \                     ⌘ [space]f',
-    \}
+            \ 'description' : '      searchs inside the current buffer
+            \                     ⌘ [space]f',
+            \}
 let g:unite_source_menu_menus.searching.command_candidates = [
-    \['▷ search line                                                ⌘ ,f',
-        \'Unite -auto-preview -start-insert line'],
-    \['▷ search word under the cursor                               ⌘ [space]8',
-        \'UniteWithCursorWord -no-split -auto-preview line'],
-    \['▷ search outlines & tags (ctags)                             ⌘ ,t',
-        \'Unite -vertical -winwidth=40 -direction=topleft -toggle outline'],
-    \['▷ search marks',
-        \'Unite -auto-preview mark'],
-    \['▷ search folds',
-        \'Unite -vertical -winwidth=30 -auto-highlight fold'],
-    \['▷ search changes',
-        \'Unite change'],
-    \['▷ search jumps',
-        \'Unite jump'],
-    \['▷ search undos',
-        \'Unite undo'],
-    \['▷ search tasks                                               ⌘ ,;',
-        \'Unite -toggle grep:%::FIXME|TODO|NOTE|XXX|COMBAK|@todo'],
-    \]
+            \['▷ search line                                                ⌘ ,f',
+            \'Unite -auto-preview -start-insert line'],
+            \['▷ search word under the cursor                               ⌘ [space]8',
+            \'UniteWithCursorWord -no-split -auto-preview line'],
+            \['▷ search outlines & tags (ctags)                             ⌘ ,t',
+            \'Unite -vertical -winwidth=40 -direction=topleft -toggle outline'],
+            \['▷ search marks',
+            \'Unite -auto-preview mark'],
+            \['▷ search folds',
+            \'Unite -vertical -winwidth=30 -auto-highlight fold'],
+            \['▷ search changes',
+            \'Unite change'],
+            \['▷ search jumps',
+            \'Unite jump'],
+            \['▷ search undos',
+            \'Unite undo'],
+            \['▷ search tasks                                               ⌘ ,;',
+            \'Unite -toggle grep:%::FIXME|TODO|NOTE|XXX|COMBAK|@todo'],
+            \]
 nnoremap <silent>[menu]f :Unite -silent menu:searching<CR>
 " 
 
 " yanks, registers & history menu 
 let g:unite_source_menu_menus.registers = {
-    \ 'description' : '      yanks, registers & history
-        \                            ⌘ [space]i',
-    \}
+            \ 'description' : '      yanks, registers & history
+            \                            ⌘ [space]i',
+            \}
 let g:unite_source_menu_menus.registers.command_candidates = [
-    \['▷ yanks                                                      ⌘ ,i',
-        \'Unite history/yank'],
-    \['▷ commands       (history)                                   ⌘ q:',
-        \'Unite history/command'],
-    \['▷ searches       (history)                                   ⌘ q/',
-        \'Unite history/search'],
-    \['▷ registers',
-        \'Unite register'],
-    \['▷ messages',
-        \'Unite output:messages'],
-    \['▷ undo tree      (gundo)                                     ⌘ ,u',
-        \'GundoToggle'],
-    \]
+            \['▷ yanks                                                      ⌘ ,i',
+            \'Unite history/yank'],
+            \['▷ commands       (history)                                   ⌘ q:',
+            \'Unite history/command'],
+            \['▷ searches       (history)                                   ⌘ q/',
+            \'Unite history/search'],
+            \['▷ registers',
+            \'Unite register'],
+            \['▷ messages',
+            \'Unite output:messages'],
+            \['▷ undo tree      (gundo)                                     ⌘ ,u',
+            \'GundoToggle'],
+            \]
 nnoremap <silent>[menu]i :Unite -silent menu:registers<CR>
 " 
 
 " spelling menu 
 let g:unite_source_menu_menus.spelling = {
-    \ 'description' : '       spell checking
-        \                                        ⌘ [space]s',
-    \}
+            \ 'description' : '       spell checking
+            \                                        ⌘ [space]s',
+            \}
 let g:unite_source_menu_menus.spelling.command_candidates = [
-    \['▷ spell checking in Spanish                                  ⌘ ,ss',
-        \'setlocal spell spelllang=es'],
-    \['▷ spell checking in English                                  ⌘ ,se',
-        \'setlocal spell spelllang=en'],
-    \['▷ turn off spell checking                                    ⌘ ,so',
-        \'setlocal nospell'],
-    \['▷ jumps to next bad spell word and show suggestions          ⌘ ,sc',
-        \'normal ,sc'],
-    \['▷ jumps to next bad spell word                               ⌘ ,sn',
-        \'normal ,sn'],
-    \['▷ suggestions                                                ⌘ ,sp',
-        \'normal ,sp'],
-    \['▷ add word to dictionary                                     ⌘ ,sa',
-        \'normal ,sa'],
-    \]
+            \['▷ spell checking in Spanish                                  ⌘ ,ss',
+            \'setlocal spell spelllang=es'],
+            \['▷ spell checking in English                                  ⌘ ,se',
+            \'setlocal spell spelllang=en'],
+            \['▷ turn off spell checking                                    ⌘ ,so',
+            \'setlocal nospell'],
+            \['▷ jumps to next bad spell word and show suggestions          ⌘ ,sc',
+            \'normal ,sc'],
+            \['▷ jumps to next bad spell word                               ⌘ ,sn',
+            \'normal ,sn'],
+            \['▷ suggestions                                                ⌘ ,sp',
+            \'normal ,sp'],
+            \['▷ add word to dictionary                                     ⌘ ,sa',
+            \'normal ,sa'],
+            \]
 " nnoremap <silent>[menu]s :Unite -silent menu:spelling<CR>
 " 
 
 " text edition menu 
 let g:unite_source_menu_menus.text = {
-    \ 'description' : '           text edition
-        \                                          ⌘ [space]e',
-    \}
+            \ 'description' : '           text edition
+            \                                          ⌘ [space]e',
+            \}
 let g:unite_source_menu_menus.text.command_candidates = [
-    \['▷ toggle search results highlight                            ⌘ ,eq',
-        \'set invhlsearch'],
-    \['▷ toggle line numbers                                        ⌘ ,l',
-        \'call ToggleRelativeAbsoluteNumber()'],
-    \['▷ toggle wrapping                                            ⌘ ,ew',
-        \'call ToggleWrap()'],
-    \['▷ toggle auto-completion word auto-selection                 ⌘ ,ea',
-        \'call ToggleNeoCompleteAutoSelect()'],
-    \['▷ show hidden chars                                          ⌘ ,eh',
-        \'set list!'],
-    \['▷ toggle fold                                                ⌘ /',
-        \'normal za'],
-    \['▷ open all folds                                             ⌘ zR',
-        \'normal zR'],
-    \['▷ close all folds                                            ⌘ zM',
-        \'normal zM'],
-    \['▷ copy to the clipboard                                      ⌘ ,y',
-        \'normal ,y'],
-    \['▷ paste from the clipboard                                   ⌘ ,p',
-        \'normal ,p'],
-    \['▷ toggle paste mode                                          ⌘ ,P',
-        \'normal ,P'],
-    \['▷ remove trailing whitespaces                                ⌘ ,et',
-        \'normal ,et'],
-    \['▷ text statistics                                            ⌘ ,es',
-        \'Unite output:normal\ ,es -no-cursor-line'],
-    \['▷ show word frequency                                        ⌘ ,ef',
-        \'Unite output:WordFrequency'],
-    \['▷ show available digraphs',
-        \'digraphs'],
-    \['▷ insert lorem ipsum text',
-        \'exe "Loremipsum" input("numero de palabras: ")'],
-    \['▷ show current char info                                     ⌘ ga',
-        \'normal ga'],
-    \]
+            \['▷ toggle search results highlight                            ⌘ ,eq',
+            \'set invhlsearch'],
+            \['▷ toggle line numbers                                        ⌘ ,l',
+            \'call ToggleRelativeAbsoluteNumber()'],
+            \['▷ toggle wrapping                                            ⌘ ,ew',
+            \'call ToggleWrap()'],
+            \['▷ toggle auto-completion word auto-selection                 ⌘ ,ea',
+            \'call ToggleNeoCompleteAutoSelect()'],
+            \['▷ show hidden chars                                          ⌘ ,eh',
+            \'set list!'],
+            \['▷ toggle fold                                                ⌘ /',
+            \'normal za'],
+            \['▷ open all folds                                             ⌘ zR',
+            \'normal zR'],
+            \['▷ close all folds                                            ⌘ zM',
+            \'normal zM'],
+            \['▷ copy to the clipboard                                      ⌘ ,y',
+            \'normal ,y'],
+            \['▷ paste from the clipboard                                   ⌘ ,p',
+            \'normal ,p'],
+            \['▷ toggle paste mode                                          ⌘ ,P',
+            \'normal ,P'],
+            \['▷ remove trailing whitespaces                                ⌘ ,et',
+            \'normal ,et'],
+            \['▷ text statistics                                            ⌘ ,es',
+            \'Unite output:normal\ ,es -no-cursor-line'],
+            \['▷ show word frequency                                        ⌘ ,ef',
+            \'Unite output:WordFrequency'],
+            \['▷ show available digraphs',
+            \'digraphs'],
+            \['▷ insert lorem ipsum text',
+            \'exe "Loremipsum" input("numero de palabras: ")'],
+            \['▷ show current char info                                     ⌘ ga',
+            \'normal ga'],
+            \]
 nnoremap <silent>[menu]e :Unite -silent -winheight=20 menu:text <CR>
 " 
 
 " neobundle menu 
 let g:unite_source_menu_menus.neobundle = {
-    \ 'description' : '      plugins administration with neobundle
-        \                 ⌘ [space]n',
-    \}
+            \ 'description' : '      plugins administration with neobundle
+            \                 ⌘ [space]n',
+            \}
 let g:unite_source_menu_menus.neobundle.command_candidates = [
-    \['▷ neobundle',
-        \'Unite neobundle'],
-    \['▷ neobundle log',
-        \'Unite neobundle/log'],
-    \['▷ neobundle lazy',
-        \'Unite neobundle/lazy'],
-    \['▷ neobundle update',
-        \'Unite neobundle/update'],
-    \['▷ neobundle search',
-        \'Unite neobundle/search'],
-    \['▷ neobundle install',
-        \'Unite neobundle/install'],
-    \['▷ neobundle check',
-        \'Unite -no-empty output:NeoBundleCheck'],
-    \['▷ neobundle docs',
-        \'Unite output:NeoBundleDocs'],
-    \['▷ neobundle clean',
-        \'NeoBundleClean'],
-    \['▷ neobundle list',
-        \'Unite output:NeoBundleList'],
-    \['▷ neobundle direct edit',
-        \'NeoBundleExtraEdit'],
-    \]
+            \['▷ neobundle',
+            \'Unite neobundle'],
+            \['▷ neobundle log',
+            \'Unite neobundle/log'],
+            \['▷ neobundle lazy',
+            \'Unite neobundle/lazy'],
+            \['▷ neobundle update',
+            \'Unite neobundle/update'],
+            \['▷ neobundle search',
+            \'Unite neobundle/search'],
+            \['▷ neobundle install',
+            \'Unite neobundle/install'],
+            \['▷ neobundle check',
+            \'Unite -no-empty output:NeoBundleCheck'],
+            \['▷ neobundle docs',
+            \'Unite output:NeoBundleDocs'],
+            \['▷ neobundle clean',
+            \'NeoBundleClean'],
+            \['▷ neobundle list',
+            \'Unite output:NeoBundleList'],
+            \['▷ neobundle direct edit',
+            \'NeoBundleExtraEdit'],
+            \]
 nnoremap <silent>[menu]n :Unite -silent -start-insert menu:neobundle<CR>
 " 
 
 " git menu 
 let g:unite_source_menu_menus.git = {
-    \ 'description' : '            admin git repositories
-        \                                ⌘ [space]g',
-    \}
+            \ 'description' : '            admin git repositories
+            \                                ⌘ [space]g',
+            \}
 let g:unite_source_menu_menus.git.command_candidates = [
-    \['▷ tig                                                        ⌘ ,gt',
-        \'normal ,gt'],
-    \['▷ git viewer             (gitv)                              ⌘ ,gv',
-        \'normal ,gv'],
-    \['▷ git viewer - buffer    (gitv)                              ⌘ ,gV',
-        \'normal ,gV'],
-    \['▷ git status             (fugitive)                          ⌘ ,gs',
-        \'Gstatus'],
-    \['▷ git diff               (fugitive)                          ⌘ ,gd',
-        \'Gdiff'],
-    \['▷ git commit             (fugitive)                          ⌘ ,gc',
-        \'Gcommit'],
-    \['▷ git log                (fugitive)                          ⌘ ,gl',
-        \'exe "silent Glog | Unite -no-quit quickfix"'],
-    \['▷ git log - all          (fugitive)                          ⌘ ,gL',
-        \'exe "silent Glog -all | Unite -no-quit quickfix"'],
-    \['▷ git blame              (fugitive)                          ⌘ ,gb',
-        \'Gblame'],
-    \['▷ git add/stage          (fugitive)                          ⌘ ,gw',
-        \'Gwrite'],
-    \['▷ git checkout           (fugitive)                          ⌘ ,go',
-        \'Gread'],
-    \['▷ git rm                 (fugitive)                          ⌘ ,gR',
-        \'Gremove'],
-    \['▷ git mv                 (fugitive)                          ⌘ ,gm',
-        \'exe "Gmove " input("destino: ")'],
-    \['▷ git push               (fugitive, buffer output)           ⌘ ,gp',
-        \'Git! push'],
-    \['▷ git pull               (fugitive, buffer output)           ⌘ ,gP',
-        \'Git! pull'],
-    \['▷ git command            (fugitive, buffer output)           ⌘ ,gi',
-        \'exe "Git! " input("comando git: ")'],
-    \['▷ git edit               (fugitive)                          ⌘ ,gE',
-        \'exe "command Gedit " input(":Gedit ")'],
-    \['▷ git grep               (fugitive)                          ⌘ ,gg',
-        \'exe "silent Ggrep -i ".input("Pattern: ") | Unite -no-quit quickfix'],
-    \['▷ git grep - messages    (fugitive)                          ⌘ ,ggm',
-        \'exe "silent Glog --grep=".input("Pattern: ")." | Unite -no-quit quickfix"'],
-    \['▷ git grep - text        (fugitive)                          ⌘ ,ggt',
-        \'exe "silent Glog -S".input("Pattern: ")." | Unite -no-quit quickfix"'],
-    \['▷ git init                                                   ⌘ ,gn',
-        \'Unite output:echo\ system("git\ init")'],
-    \['▷ git cd                 (fugitive)',
-        \'Gcd'],
-    \['▷ git lcd                (fugitive)',
-        \'Glcd'],
-    \['▷ git browse             (fugitive)                          ⌘ ,gB',
-        \'Gbrowse'],
-    \['▷ github dashboard       (github-dashboard)                  ⌘ ,gD',
-        \'exe "GHD! " input("Username: ")'],
-    \['▷ github activity        (github-dashboard)                  ⌘ ,gA',
-        \'exe "GHA! " input("Username or repository: ")'],
-    \['▷ github issues & PR                                         ⌘ ,gS',
-        \'normal ,gS'],
-    \]
+            \['▷ tig                                                        ⌘ ,gt',
+            \'normal ,gt'],
+            \['▷ git viewer             (gitv)                              ⌘ ,gv',
+            \'normal ,gv'],
+            \['▷ git viewer - buffer    (gitv)                              ⌘ ,gV',
+            \'normal ,gV'],
+            \['▷ git status             (fugitive)                          ⌘ ,gs',
+            \'Gstatus'],
+            \['▷ git diff               (fugitive)                          ⌘ ,gd',
+            \'Gdiff'],
+            \['▷ git commit             (fugitive)                          ⌘ ,gc',
+            \'Gcommit'],
+            \['▷ git log                (fugitive)                          ⌘ ,gl',
+            \'exe "silent Glog | Unite -no-quit quickfix"'],
+            \['▷ git log - all          (fugitive)                          ⌘ ,gL',
+            \'exe "silent Glog -all | Unite -no-quit quickfix"'],
+            \['▷ git blame              (fugitive)                          ⌘ ,gb',
+            \'Gblame'],
+            \['▷ git add/stage          (fugitive)                          ⌘ ,gw',
+            \'Gwrite'],
+            \['▷ git checkout           (fugitive)                          ⌘ ,go',
+            \'Gread'],
+            \['▷ git rm                 (fugitive)                          ⌘ ,gR',
+            \'Gremove'],
+            \['▷ git mv                 (fugitive)                          ⌘ ,gm',
+            \'exe "Gmove " input("destino: ")'],
+            \['▷ git push               (fugitive, buffer output)           ⌘ ,gp',
+            \'Git! push'],
+            \['▷ git pull               (fugitive, buffer output)           ⌘ ,gP',
+            \'Git! pull'],
+            \['▷ git command            (fugitive, buffer output)           ⌘ ,gi',
+            \'exe "Git! " input("comando git: ")'],
+            \['▷ git edit               (fugitive)                          ⌘ ,gE',
+            \'exe "command Gedit " input(":Gedit ")'],
+            \['▷ git grep               (fugitive)                          ⌘ ,gg',
+            \'exe "silent Ggrep -i ".input("Pattern: ") | Unite -no-quit quickfix'],
+            \['▷ git grep - messages    (fugitive)                          ⌘ ,ggm',
+            \'exe "silent Glog --grep=".input("Pattern: ")." | Unite -no-quit quickfix"'],
+            \['▷ git grep - text        (fugitive)                          ⌘ ,ggt',
+            \'exe "silent Glog -S".input("Pattern: ")." | Unite -no-quit quickfix"'],
+            \['▷ git init                                                   ⌘ ,gn',
+            \'Unite output:echo\ system("git\ init")'],
+            \['▷ git cd                 (fugitive)',
+            \'Gcd'],
+            \['▷ git lcd                (fugitive)',
+            \'Glcd'],
+            \['▷ git browse             (fugitive)                          ⌘ ,gB',
+            \'Gbrowse'],
+            \['▷ github dashboard       (github-dashboard)                  ⌘ ,gD',
+            \'exe "GHD! " input("Username: ")'],
+            \['▷ github activity        (github-dashboard)                  ⌘ ,gA',
+            \'exe "GHA! " input("Username or repository: ")'],
+            \['▷ github issues & PR                                         ⌘ ,gS',
+            \'normal ,gS'],
+            \]
 nnoremap <silent>[menu]g :Unite -silent -winheight=29 -start-insert menu:git<CR>
 " 
 
 " code menu 
 let g:unite_source_menu_menus.code = {
-    \ 'description' : '           code tools
-        \                                            ⌘ [space]p',
-    \}
+            \ 'description' : '           code tools
+            \                                            ⌘ [space]p',
+            \}
 let g:unite_source_menu_menus.code.command_candidates = [
-    \['▷ run python code                            (pymode)        ⌘ ,r',
-        \'PymodeRun'],
-    \['▷ show docs for the current word             (pymode)        ⌘ K',
-        \'normal K'],
-    \['▷ insert a breakpoint                        (pymode)        ⌘ ,B',
-        \'normal ,B'],
-    \['▷ pylint check                               (pymode)        ⌘ ,n',
-        \'PymodeLint'],
-    \['▷ run with python2 in tmux panel             (vimux)         ⌘ ,rr',
-        \'normal ,rr'],
-    \['▷ run with python3 in tmux panel             (vimux)         ⌘ ,r3',
-        \'normal ,r3'],
-    \['▷ run with python2 & time in tmux panel      (vimux)         ⌘ ,rt',
-        \'normal ,rt'],
-    \['▷ run with pypy & time in tmux panel         (vimux)         ⌘ ,rp',
-        \'normal ,rp'],
-    \['▷ command prompt to run in a tmux panel      (vimux)         ⌘ ,rc',
-        \'VimuxPromptCommand'],
-    \['▷ repeat last command                        (vimux)         ⌘ ,rl',
-        \'VimuxRunLastCommand'],
-    \['▷ stop command execution in tmux panel       (vimux)         ⌘ ,rs',
-        \'VimuxInterruptRunner'],
-    \['▷ inspect tmux panel                         (vimux)         ⌘ ,ri',
-        \'VimuxInspectRunner'],
-    \['▷ close tmux panel                           (vimux)         ⌘ ,rq',
-        \'VimuxCloseRunner'],
-    \['▷ sort imports                               (isort)',
-        \'Isort'],
-    \['▷ go to definition                           (pymode-rope)   ⌘ C-C g',
-        \'call pymode#rope#goto_definition()'],
-    \['▷ find where a function is used              (pymode-rope)   ⌘ C-C f',
-        \'call pymode#rope#find_it()'],
-    \['▷ show docs for current word                 (pymode-rope)   ⌘ C-C d',
-        \'call pymode#rope#show_doc()'],
-    \['▷ reorganize imports                         (pymode-rope)   ⌘ C-C r o',
-        \'call pymode#rope#organize_imports()'],
-    \['▷ refactorize - rename                       (pymode-rope)   ⌘ C-C r r',
-        \'call pymode#rope#rename()'],
-    \['▷ refactorize - inline                       (pymode-rope)   ⌘ C-C r i',
-        \'call pymode#rope#inline()'],
-    \['▷ refactorize - move                         (pymode-rope)   ⌘ C-C r v',
-        \'call pymode#rope#move()'],
-    \['▷ refactorize - use function                 (pymode-rope)   ⌘ C-C r u',
-        \'call pymode#rope#use_function()'],
-    \['▷ refactorize - change signature             (pymode-rope)   ⌘ C-C r s',
-        \'call pymode#rope#signature()'],
-    \['▷ refactorize - rename current module        (pymode-rope)   ⌘ C-C r 1 r',
-        \'PymodeRopeRenameModule'],
-    \['▷ refactorize - module to package            (pymode-rope)   ⌘ C-C r 1 p',
-        \'PymodeRopeModuleToPackage'],
-    \['▷ syntastic toggle                           (syntastic)',
-        \'SyntasticToggleMode'],
-    \['▷ syntastic check & errors                   (syntastic)     ⌘ ,N',
-        \'normal ,N'],
-    \['▷ list virtualenvs                           (virtualenv)',
-        \'Unite output:VirtualEnvList'],
-    \['▷ activate virtualenv                        (virtualenv)',
-        \'VirtualEnvActivate'],
-    \['▷ deactivate virtualenv                      (virtualenv)',
-        \'VirtualEnvDeactivate'],
-    \['▷ run coverage2                              (coveragepy)',
-        \'call system("coverage2 run ".bufname("%")) | Coveragepy report'],
-    \['▷ run coverage3                              (coveragepy)',
-        \'call system("coverage3 run ".bufname("%")) | Coveragepy report'],
-    \['▷ toggle coverage report                     (coveragepy)',
-        \'Coveragepy session'],
-    \['▷ toggle coverage marks                      (coveragepy)',
-        \'Coveragepy show'],
-    \['▷ coffeewatch                                (coffeescript)  ⌘ ,rw',
-        \'CoffeeWatch vert'],
-    \['▷ count lines of code',
-        \'Unite -default-action= output:call\\ LinesOfCode()'],
-    \['▷ toggle indent lines                                        ⌘ ,L',
-        \'IndentLinesToggle'],
-    \]
+            \['▷ run python code                            (pymode)        ⌘ ,r',
+            \'PymodeRun'],
+            \['▷ show docs for the current word             (pymode)        ⌘ K',
+            \'normal K'],
+            \['▷ insert a breakpoint                        (pymode)        ⌘ ,B',
+            \'normal ,B'],
+            \['▷ pylint check                               (pymode)        ⌘ ,n',
+            \'PymodeLint'],
+            \['▷ run with python2 in tmux panel             (vimux)         ⌘ ,rr',
+            \'normal ,rr'],
+            \['▷ run with python3 in tmux panel             (vimux)         ⌘ ,r3',
+            \'normal ,r3'],
+            \['▷ run with python2 & time in tmux panel      (vimux)         ⌘ ,rt',
+            \'normal ,rt'],
+            \['▷ run with pypy & time in tmux panel         (vimux)         ⌘ ,rp',
+            \'normal ,rp'],
+            \['▷ command prompt to run in a tmux panel      (vimux)         ⌘ ,rc',
+            \'VimuxPromptCommand'],
+            \['▷ repeat last command                        (vimux)         ⌘ ,rl',
+            \'VimuxRunLastCommand'],
+            \['▷ stop command execution in tmux panel       (vimux)         ⌘ ,rs',
+            \'VimuxInterruptRunner'],
+            \['▷ inspect tmux panel                         (vimux)         ⌘ ,ri',
+            \'VimuxInspectRunner'],
+            \['▷ close tmux panel                           (vimux)         ⌘ ,rq',
+            \'VimuxCloseRunner'],
+            \['▷ sort imports                               (isort)',
+            \'Isort'],
+            \['▷ go to definition                           (pymode-rope)   ⌘ C-C g',
+            \'call pymode#rope#goto_definition()'],
+            \['▷ find where a function is used              (pymode-rope)   ⌘ C-C f',
+            \'call pymode#rope#find_it()'],
+            \['▷ show docs for current word                 (pymode-rope)   ⌘ C-C d',
+            \'call pymode#rope#show_doc()'],
+            \['▷ reorganize imports                         (pymode-rope)   ⌘ C-C r o',
+            \'call pymode#rope#organize_imports()'],
+            \['▷ refactorize - rename                       (pymode-rope)   ⌘ C-C r r',
+            \'call pymode#rope#rename()'],
+            \['▷ refactorize - inline                       (pymode-rope)   ⌘ C-C r i',
+            \'call pymode#rope#inline()'],
+            \['▷ refactorize - move                         (pymode-rope)   ⌘ C-C r v',
+            \'call pymode#rope#move()'],
+            \['▷ refactorize - use function                 (pymode-rope)   ⌘ C-C r u',
+            \'call pymode#rope#use_function()'],
+            \['▷ refactorize - change signature             (pymode-rope)   ⌘ C-C r s',
+            \'call pymode#rope#signature()'],
+            \['▷ refactorize - rename current module        (pymode-rope)   ⌘ C-C r 1 r',
+            \'PymodeRopeRenameModule'],
+            \['▷ refactorize - module to package            (pymode-rope)   ⌘ C-C r 1 p',
+            \'PymodeRopeModuleToPackage'],
+            \['▷ syntastic toggle                           (syntastic)',
+            \'SyntasticToggleMode'],
+            \['▷ syntastic check & errors                   (syntastic)     ⌘ ,N',
+            \'normal ,N'],
+            \['▷ list virtualenvs                           (virtualenv)',
+            \'Unite output:VirtualEnvList'],
+            \['▷ activate virtualenv                        (virtualenv)',
+            \'VirtualEnvActivate'],
+            \['▷ deactivate virtualenv                      (virtualenv)',
+            \'VirtualEnvDeactivate'],
+            \['▷ run coverage2                              (coveragepy)',
+            \'call system("coverage2 run ".bufname("%")) | Coveragepy report'],
+            \['▷ run coverage3                              (coveragepy)',
+            \'call system("coverage3 run ".bufname("%")) | Coveragepy report'],
+            \['▷ toggle coverage report                     (coveragepy)',
+            \'Coveragepy session'],
+            \['▷ toggle coverage marks                      (coveragepy)',
+            \'Coveragepy show'],
+            \['▷ coffeewatch                                (coffeescript)  ⌘ ,rw',
+            \'CoffeeWatch vert'],
+            \['▷ count lines of code',
+            \'Unite -default-action= output:call\\ LinesOfCode()'],
+            \['▷ toggle indent lines                                        ⌘ ,L',
+            \'IndentLinesToggle'],
+            \]
 nnoremap <silent>[menu]p :Unite -silent -winheight=42 menu:code<CR>
 " 
 
 " markdown menu 
 let g:unite_source_menu_menus.markdown = {
-    \ 'description' : '       preview markdown extra docs
-        \                           ⌘ [space]k',
-    \}
+            \ 'description' : '       preview markdown extra docs
+            \                           ⌘ [space]k',
+            \}
 let g:unite_source_menu_menus.markdown.command_candidates = [
-    \['▷ preview',
-        \'Me'],
-    \['▷ refresh',
-        \'Mer'],
-    \]
+            \['▷ preview',
+            \'Me'],
+            \['▷ refresh',
+            \'Mer'],
+            \]
 nnoremap <silent>[menu]k :Unite -silent menu:markdown<CR>
 " 
 
 " bookmarks menu 
 let g:unite_source_menu_menus.bookmarks = {
-    \ 'description' : '      bookmarks
-        \                                             ⌘ [space]m',
-    \}
+            \ 'description' : '      bookmarks
+            \                                             ⌘ [space]m',
+            \}
 let g:unite_source_menu_menus.bookmarks.command_candidates = [
-    \['▷ open bookmarks',
-        \'Unite bookmark:*'],
-    \['▷ add bookmark',
-        \'UniteBookmarkAdd'],
-    \]
+            \['▷ open bookmarks',
+            \'Unite bookmark:*'],
+            \['▷ add bookmark',
+            \'UniteBookmarkAdd'],
+            \]
 nnoremap <silent>[menu]m :Unite -silent menu:bookmarks<CR>
 " 
 
 " colorv menu 
 function! GetColorFormat()
     let formats = {'r' : 'RGB',
-                  \'n' : 'NAME',
-                  \'s' : 'HEX',
-                  \'ar': 'RGBA',
-                  \'pr': 'RGBP',
-                  \'pa': 'RGBAP',
-                  \'m' : 'CMYK',
-                  \'l' : 'HSL',
-                  \'la' : 'HSLA',
-                  \'h' : 'HSV',
-                  \}
+                \'n' : 'NAME',
+                \'s' : 'HEX',
+                \'ar': 'RGBA',
+                \'pr': 'RGBP',
+                \'pa': 'RGBAP',
+                \'m' : 'CMYK',
+                \'l' : 'HSL',
+                \'la' : 'HSLA',
+                \'h' : 'HSV',
+                \}
     let formats_menu = ["\n"]
     for [k, v] in items(formats)
         call add(formats_menu, "  ".k."\t".v."\n")
@@ -1536,23 +1536,23 @@ endfunction
 
 function! GetColorMethod()
     let methods = {
-                   \'h' : 'Hue',
-                   \'s' : 'Saturation',
-                   \'v' : 'Value',
-                   \'m' : 'Monochromatic',
-                   \'a' : 'Analogous',
-                   \'3' : 'Triadic',
-                   \'4' : 'Tetradic',
-                   \'n' : 'Neutral',
-                   \'c' : 'Clash',
-                   \'q' : 'Square',
-                   \'5' : 'Five-Tone',
-                   \'6' : 'Six-Tone',
-                   \'2' : 'Complementary',
-                   \'p' : 'Split-Complementary',
-                   \'l' : 'Luma',
-                   \'g' : 'Turn-To',
-                   \}
+                \'h' : 'Hue',
+                \'s' : 'Saturation',
+                \'v' : 'Value',
+                \'m' : 'Monochromatic',
+                \'a' : 'Analogous',
+                \'3' : 'Triadic',
+                \'4' : 'Tetradic',
+                \'n' : 'Neutral',
+                \'c' : 'Clash',
+                \'q' : 'Square',
+                \'5' : 'Five-Tone',
+                \'6' : 'Six-Tone',
+                \'2' : 'Complementary',
+                \'p' : 'Split-Complementary',
+                \'l' : 'Luma',
+                \'g' : 'Turn-To',
+                \}
     let methods_menu = ["\n"]
     for [k, v] in items(methods)
         call add(methods_menu, "  ".k."\t".v."\n")
@@ -1562,130 +1562,130 @@ function! GetColorMethod()
 endfunction
 
 let g:unite_source_menu_menus.colorv = {
-    \ 'description' : '         color management
-        \                                      ⌘ [space]c',
-    \}
+            \ 'description' : '         color management
+            \                                      ⌘ [space]c',
+            \}
 let g:unite_source_menu_menus.colorv.command_candidates = [
-    \['▷ open colorv                                                ⌘ ,cv',
-        \'ColorV'],
-    \['▷ open colorv with the color under the cursor                ⌘ ,cw',
-        \'ColorVView'],
-    \['▷ preview colors                                             ⌘ ,cpp',
-        \'ColorVPreview'],
-    \['▷ color picker                                               ⌘ ,cd',
-        \'ColorVPicker'],
-    \['▷ edit the color under the cursor                            ⌘ ,ce',
-        \'ColorVEdit'],
-    \['▷ edit the color under the cursor (and all the concurrences) ⌘ ,cE',
-        \'ColorVEditAll'],
-    \['▷ insert a color                                             ⌘ ,cii',
-        \'exe "ColorVInsert " .GetColorFormat()'],
-    \['▷ color list relative to the current                         ⌘ ,cgh',
-        \'exe "ColorVList " .GetColorMethod() "
-        \ ".input("number of colors? (optional): ")
-        \ " ".input("number of steps?  (optional): ")'],
-    \['▷ show colors list (Web W3C colors)                          ⌘ ,cn',
-        \'ColorVName'],
-    \['▷ choose color scheme (ColourLovers, Kuler)                  ⌘ ,css',
-        \'ColorVScheme'],
-    \['▷ show favorite color schemes                                ⌘ ,csf',
-        \'ColorVSchemeFav'],
-    \['▷ new color scheme                                           ⌘ ,csn',
-        \'ColorVSchemeNew'],
-    \['▷ create hue gradation between two colors',
-        \'exe "ColorVTurn2 " " ".input("Color 1 (hex): ")
-        \" ".input("Color 2 (hex): ")'],
-    \]
+            \['▷ open colorv                                                ⌘ ,cv',
+            \'ColorV'],
+            \['▷ open colorv with the color under the cursor                ⌘ ,cw',
+            \'ColorVView'],
+            \['▷ preview colors                                             ⌘ ,cpp',
+            \'ColorVPreview'],
+            \['▷ color picker                                               ⌘ ,cd',
+            \'ColorVPicker'],
+            \['▷ edit the color under the cursor                            ⌘ ,ce',
+            \'ColorVEdit'],
+            \['▷ edit the color under the cursor (and all the concurrences) ⌘ ,cE',
+            \'ColorVEditAll'],
+            \['▷ insert a color                                             ⌘ ,cii',
+            \'exe "ColorVInsert " .GetColorFormat()'],
+            \['▷ color list relative to the current                         ⌘ ,cgh',
+            \'exe "ColorVList " .GetColorMethod() "
+            \ ".input("number of colors? (optional): ")
+            \ " ".input("number of steps?  (optional): ")'],
+            \['▷ show colors list (Web W3C colors)                          ⌘ ,cn',
+            \'ColorVName'],
+            \['▷ choose color scheme (ColourLovers, Kuler)                  ⌘ ,css',
+            \'ColorVScheme'],
+            \['▷ show favorite color schemes                                ⌘ ,csf',
+            \'ColorVSchemeFav'],
+            \['▷ new color scheme                                           ⌘ ,csn',
+            \'ColorVSchemeNew'],
+            \['▷ create hue gradation between two colors',
+            \'exe "ColorVTurn2 " " ".input("Color 1 (hex): ")
+            \" ".input("Color 2 (hex): ")'],
+            \]
 nnoremap <silent>[menu]c :Unite -silent menu:colorv<CR>
 " 
 
 " vim menu 
 let g:unite_source_menu_menus.vim = {
-    \ 'description' : '            vim
-        \                                                   ⌘ [space]v',
-    \}
+            \ 'description' : '            vim
+            \                                                   ⌘ [space]v',
+            \}
 let g:unite_source_menu_menus.vim.command_candidates = [
-    \['▷ choose colorscheme',
-        \'Unite colorscheme -auto-preview'],
-    \['▷ mappings',
-        \'Unite mapping -start-insert'],
-    \['▷ edit configuration file (vimrc)',
-        \'edit $MYVIMRC'],
-    \['▷ choose filetype',
-        \'Unite -start-insert filetype'],
-    \['▷ vim help',
-        \'Unite -start-insert help'],
-    \['▷ vim commands',
-        \'Unite -start-insert command'],
-    \['▷ vim functions',
-        \'Unite -start-insert function'],
-    \['▷ vim runtimepath',
-        \'Unite -start-insert runtimepath'],
-    \['▷ vim command output',
-        \'Unite output'],
-    \['▷ unite sources',
-        \'Unite source'],
-    \['▷ kill process',
-        \'Unite -default-action=sigkill -start-insert process'],
-    \['▷ launch executable (dmenu like)',
-        \'Unite -start-insert launcher'],
-    \]
+            \['▷ choose colorscheme',
+            \'Unite colorscheme -auto-preview'],
+            \['▷ mappings',
+            \'Unite mapping -start-insert'],
+            \['▷ edit configuration file (vimrc)',
+            \'edit $MYVIMRC'],
+            \['▷ choose filetype',
+            \'Unite -start-insert filetype'],
+            \['▷ vim help',
+            \'Unite -start-insert help'],
+            \['▷ vim commands',
+            \'Unite -start-insert command'],
+            \['▷ vim functions',
+            \'Unite -start-insert function'],
+            \['▷ vim runtimepath',
+            \'Unite -start-insert runtimepath'],
+            \['▷ vim command output',
+            \'Unite output'],
+            \['▷ unite sources',
+            \'Unite source'],
+            \['▷ kill process',
+            \'Unite -default-action=sigkill -start-insert process'],
+            \['▷ launch executable (dmenu like)',
+            \'Unite -start-insert launcher'],
+            \]
 nnoremap <silent>[menu]v :Unite menu:vim -silent -start-insert<CR>
 " 
 
 " db menu 
 let g:unite_source_menu_menus.db = {
-    \ 'description' : '             database (SQL)
-        \                                        ⌘ [space]S',
-    \}
+            \ 'description' : '             database (SQL)
+            \                                        ⌘ [space]S',
+            \}
 let g:unite_source_menu_menus.db.command_candidates = [
-    \['▷ Execute SQL',
-        \'exe "DBExecSQL" " ".input("SQL?: ")'],
-    \['▷ Execute SQL (with limit of n rows)',
-        \'exe "DBExecSQL" " ".input("SQL?: ")'],
-    \['▷ SQL SELECT statement',
-        \'exe "Select" " ".input("SELECT ")'],
-    \['▷ SQL UPDATE statement',
-        \'exe "Update" " ".input("UPDATE")'],
-    \['▷ SQL INSERT statement',
-        \'exe "Insert" " ".input("INSERT")'],
-    \['▷ SQL DELETE statement',
-        \'exe "Delete" " ".input("DELETE")'],
-    \['▷ SQL CALL statement',
-        \'exe "Call" " ".input("CALL")'],
-    \['▷ SQL DROP statement',
-        \'exe "Drop" " ".input("DROP")'],
-    \['▷ SQL ALTER statement',
-        \'exe "Alter" " ".input("ALTER")'],
-    \['▷ SQL CREATE statement',
-        \'exe "Create" " ".input("CREATE")'],
-    \['▷ List all Tables                                            ⌘ ,Slt',
-        \'DBListTable'],
-    \['▷ List all Procedures                                        ⌘ ,Slp',
-        \'DBListProcedure'],
-    \['▷ List all Views                                             ⌘ ,Slv',
-        \'DBListView'],
-    \['▷ List all Variables                                         ⌘ ,Svr',
-        \'DBListVar'],
-    \['▷ DBext Get Options',
-        \'DBGetOption'],
-    \['▷ DBext Set Option',
-        \'exe "DBSetOption" " ".input("Option: ")'],
-    \['▷ DBext Set Var',
-        \'exe "DBSetVar" " ".input("Var: ")'],
-    \['▷ DBext Set Buffer Parameters',
-        \'DBPromptForBufferParameters'],
-    \['▷ List all Connections       (only DBI/ODBC)',
-        \'DBListConnections'],
-    \['▷ Commit                     (only DBI/ODBC)',
-        \'DBCommit'],
-    \['▷ Rollback                   (only DBI/ODBC)',
-        \'DBRollback'],
-    \['▷ Connect                    (only DBI/ODBC)',
-        \'DBConnect'],
-    \['▷ Disconnect                 (only DBI/ODBC)',
-        \'DBDisconnect'],
-    \]
+            \['▷ Execute SQL',
+            \'exe "DBExecSQL" " ".input("SQL?: ")'],
+            \['▷ Execute SQL (with limit of n rows)',
+            \'exe "DBExecSQL" " ".input("SQL?: ")'],
+            \['▷ SQL SELECT statement',
+            \'exe "Select" " ".input("SELECT ")'],
+            \['▷ SQL UPDATE statement',
+            \'exe "Update" " ".input("UPDATE")'],
+            \['▷ SQL INSERT statement',
+            \'exe "Insert" " ".input("INSERT")'],
+            \['▷ SQL DELETE statement',
+            \'exe "Delete" " ".input("DELETE")'],
+            \['▷ SQL CALL statement',
+            \'exe "Call" " ".input("CALL")'],
+            \['▷ SQL DROP statement',
+            \'exe "Drop" " ".input("DROP")'],
+            \['▷ SQL ALTER statement',
+            \'exe "Alter" " ".input("ALTER")'],
+            \['▷ SQL CREATE statement',
+            \'exe "Create" " ".input("CREATE")'],
+            \['▷ List all Tables                                            ⌘ ,Slt',
+            \'DBListTable'],
+            \['▷ List all Procedures                                        ⌘ ,Slp',
+            \'DBListProcedure'],
+            \['▷ List all Views                                             ⌘ ,Slv',
+            \'DBListView'],
+            \['▷ List all Variables                                         ⌘ ,Svr',
+            \'DBListVar'],
+            \['▷ DBext Get Options',
+            \'DBGetOption'],
+            \['▷ DBext Set Option',
+            \'exe "DBSetOption" " ".input("Option: ")'],
+            \['▷ DBext Set Var',
+            \'exe "DBSetVar" " ".input("Var: ")'],
+            \['▷ DBext Set Buffer Parameters',
+            \'DBPromptForBufferParameters'],
+            \['▷ List all Connections       (only DBI/ODBC)',
+            \'DBListConnections'],
+            \['▷ Commit                     (only DBI/ODBC)',
+            \'DBCommit'],
+            \['▷ Rollback                   (only DBI/ODBC)',
+            \'DBRollback'],
+            \['▷ Connect                    (only DBI/ODBC)',
+            \'DBConnect'],
+            \['▷ Disconnect                 (only DBI/ODBC)',
+            \'DBDisconnect'],
+            \]
 
 nnoremap <silent>[menu]S :Unite menu:db -silent -winheight=25 -start-insert<CR>
 
@@ -1833,7 +1833,7 @@ au BufRead,BufNewFile */templates/*.html setlocal filetype=htmldjango.html
 " JSON  -------------------------------------------------------------------
 
 augroup json_autocmd
-  autocmd FileType json set foldmethod=syntax
+    autocmd FileType json set foldmethod=syntax
 augroup END
 
 " 
