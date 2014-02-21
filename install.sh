@@ -4,7 +4,8 @@
 
 master="git://github.com/foobarren/dotfiles.git"
 vundle="git://github.com/gmarik/vundle.git"
-dest="~/.foobarren_dotfiles"
+destpath=`echo ~`
+dest=${destpath}/.foobarren_dotfiles
 
 function download {
 	rm -rf ${dest}
