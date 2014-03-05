@@ -162,6 +162,8 @@ NeoBundleLazy 'alfredodeza/coveragepy.vim', {'autoload': {'filetypes': ['python'
 " Sort imports
 " NeoBundle 'fisadev/vim-isort', {'autoload': {'filetypes': ['python']}}
 " 
+NeoBundle 'alfredodeza/pytest.vim'
+NeoBundle 'reinh/vim-makegreen'
 
 " Code Snippets 
 
