@@ -28,6 +28,7 @@ function install_pip {
 	sudo pip install virtualenvwrapper
 	sudo pip install coverage
     sudo pip install isort
+    sudo pip install jedi
 }
 
 function install_zsh {
